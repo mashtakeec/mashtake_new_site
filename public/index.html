@@ -40,6 +40,23 @@
       })(document);
     </script>
     
+    <!-- Verificar carga de fuentes -->
+    <script>
+      window.addEventListener('load', function() {
+        try {
+          console.log('Fuentes cargadas:', document.fonts.ready);
+          document.fonts.ready.then(function() {
+            console.log('Adobe Fonts listas');
+            document.fonts.forEach(function(font) {
+              console.log('Fuente disponible:', font.family, font.weight);
+            });
+          });
+        } catch(e) {
+          console.log('Error verificando fuentes:', e);
+        }
+      });
+    </script>
+    
     <!-- Styles -->
     <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css" />
     

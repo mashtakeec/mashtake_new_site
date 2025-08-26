@@ -20,9 +20,9 @@ const AnimatedButton = ({
     ].filter(Boolean).join(' ');
 
     const buttonStyle = {
-        backgroundColor: isHovered ? 'var(--aces-black)' : 'transparent',
+        backgroundColor: isHovered ? '#292929' : 'transparent',
         color: isHovered ? 'var(--aces-white)' : 'var(--aces-black)',
-        borderColor: isHovered ? 'var(--aces-black)' : 'var(--aces-border)',
+        borderColor: isHovered ? '#292929' : 'var(--aces-border)',
         transform: isHovered ? 'scale(1.02)' : 'scale(1)',
         transition: 'var(--aces-transition)',
         cursor: disabled ? 'not-allowed' : 'pointer',

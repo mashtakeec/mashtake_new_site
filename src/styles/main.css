@@ -6,6 +6,17 @@
 /* Adobe Fonts - ya cargadas en index.html */
 /* futura-pt y source-han-sans-japanese */
 
+/* Aplicar fuentes Adobe a todo el sitio */
+html {
+    font-family: source-han-sans-japanese, sans-serif;
+}
+
+/* Fuente específica para elementos en inglés */
+.english, 
+[lang="en"] {
+    font-family: futura-pt, sans-serif;
+}
+
 /* Reset y estilos base */
 * {
     margin: 0;
@@ -23,7 +34,7 @@ body {
     color: #333;
     background-color: #fff;
     overflow-x: hidden;
-    font-weight: 300;
+    font-weight: 200; /* Cambiado a 200 que sí está disponible */
 }
 
 /* Variables CSS globales */
@@ -43,7 +54,8 @@ body {
 
 /* Tipografía */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
+    font-family: source-han-sans-japanese, futura-pt, sans-serif;
+    font-weight: 200; /* Usar peso disponible */
     line-height: 1.2;
     margin-bottom: 1rem;
 }
@@ -81,7 +93,8 @@ a:hover {
     border: none;
     border-radius: 4px;
     font-size: 1rem;
-    font-weight: 500;
+    font-family: futura-pt, sans-serif;
+    font-weight: 400; /* Peso normal de futura-pt */
     cursor: pointer;
     transition: var(--transition);
     text-align: center;
@@ -467,9 +480,10 @@ a:hover {
 .Style_text-container__8bqHn {
     font-family: var(--aces-font-primary);
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 200; /* Peso disponible */
     color: var(--aces-black);
     position: relative;
+    letter-spacing: 0.02em;
 }
 
 /* === TÍTULOS DE SECCIÓN ACES === */
@@ -481,10 +495,10 @@ a:hover {
 .Style_section-title__39zbR,
 .Style_section-title__dttCT {
     font-family: var(--aces-font-primary);
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 32px;
+    font-weight: 200;
     color: var(--aces-black);
-    line-height: 1.6;
+    line-height: 1.4;
     letter-spacing: 0.02em;
 }
 
@@ -497,7 +511,7 @@ a:hover {
     background-color: transparent;
     color: var(--aces-black);
     border: 1px solid var(--aces-border);
-    border-radius: 4px;
+    border-radius: 25px;
     padding: 12px 24px;
     transition: var(--aces-transition);
     cursor: pointer;
@@ -517,9 +531,9 @@ a:hover {
 .Style_btn__pNrtU.Style_rounded-btn__MV1ZJ:hover,
 .aces-button:hover,
 .aces-btn-rounded:hover {
-    background-color: var(--aces-black);
+    background-color: #292929;
     color: var(--aces-white);
-    border-color: var(--aces-black);
+    border-color: #292929;
     transform: scale(1.02);
 }
 
@@ -565,13 +579,17 @@ a:hover {
 }
 
 /* === MEJORAS ESPECÍFICAS PARA FIDELIDAD VISUAL === */
-.hero-title {
-    font-weight: 300 !important;
-    letter-spacing: 0.02em;
+.hero-section .hero-title {
+    font-family: source-han-sans-japanese, sans-serif;
+    font-weight: 200; /* Peso disponible */
+    letter-spacing: 0.05em;
+    font-size: 3.5rem;
+    color: var(--aces-black);
 }
 
-.section-title {
-    font-weight: 300 !important;
+.section-header .section-title {
+    font-family: source-han-sans-japanese, sans-serif;
+    font-weight: 200;
     letter-spacing: 0.02em;
 }
 
@@ -579,18 +597,21 @@ a:hover {
 .btn-primary, 
 .btn-secondary, 
 .btn-outline {
-    font-family: var(--aces-font-primary) !important;
-    font-size: 14px !important;
-    font-weight: 400 !important;
-    padding: 12px 24px !important;
-    border-radius: 4px !important;
-    transition: var(--aces-transition) !important;
+    font-family: var(--aces-font-primary);
+    font-size: 14px;
+    font-weight: 200;
+    padding: 12px 24px;
+    border-radius: 25px;
+    transition: var(--aces-transition);
 }
 
+.btn:hover,
 .btn-primary:hover,
 .btn-secondary:hover,
 .btn-outline:hover {
-    transform: scale(1.02) !important;
+    transform: scale(1.02);
+    background-color: #292929;
+    border-color: #292929;
 }
 
 /* === RESPONSIVE ESPECÍFICO ACES === */
@@ -656,7 +677,7 @@ a:hover {
 /* Ajustes específicos para títulos */
 h1, h2, h3, h4, h5, h6 {
     font-family: source-han-sans-japanese, sans-serif;
-    font-weight: 300;
+    font-weight: 200; /* Peso disponible */
 }
 
 /* Para texto en inglés en títulos */

@@ -40,7 +40,7 @@ const Home = () => {
                             className="hero-text"
                             {...useEntryAnimation(0.2)}
                         >
-                            <h1 className="hero-title Style_section-title__teS9o">
+                            <h1 className="hero-title Style_section-title__teS9o" style={{fontFamily: 'source-han-sans-japanese, sans-serif', fontSize: '48px', fontWeight: 200}}>
                                 <span className="title-line">アルゴリズムで、</span>
                                 <span className="title-line">シンプルな社会を</span>
                             </h1>
