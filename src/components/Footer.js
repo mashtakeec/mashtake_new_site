@@ -17,27 +17,59 @@ const Footer = () => {
           </div>
           
           <div className="footer-links">
-            <nav className="footer-nav">
-              <ul>
-                <li><Link to="/about">私たちについて</Link></li>
-                <li><Link to="/services">事業紹介</Link></li>
-                <li><Link to="/projects">実績</Link></li>
-                <li><Link to="/technologies">技術</Link></li>
-                <li><Link to="/news">ニュース</Link></li>
-                <li><Link to="/contact">お問い合わせ</Link></li>
-              </ul>
-            </nav>
+            <div className="footer-section">
+              <Link to="/about" className="footer-main-link">私たちについて</Link>
+              <p>Who We Are</p>
+            </div>
+            
+            <div className="footer-section">
+              <Link to="/services" className="footer-main-link">事業紹介</Link>
+              <p>Services</p>
+              <p>DXパートナーサービス / AIソフトウェアサービス</p>
+            </div>
+            
+            <div className="footer-section">
+              <Link to="/technologies" className="footer-main-link">技術</Link>
+              <p>Technologies</p>
+            </div>
+            
+            <div className="footer-section">
+              <Link to="/careers" className="footer-main-link">採用情報</Link>
+              <p>Careers</p>
+            </div>
+            
+            <div className="footer-section">
+              <Link to="/news" className="footer-main-link">ニュース</Link>
+              <p>News</p>
+            </div>
+            
+            <div className="footer-section">
+              <Link to="/company" className="footer-main-link">会社案内</Link>
+              <p>Company</p>
+              <p>会社情報 / メンバー / 代表メッセージ</p>
+            </div>
           </div>
           
-          <div className="footer-info">
-            <p>ACES株式会社</p>
-            <p>〒100-0000 東京都</p>
-            <p>info@acesinc.co.jp</p>
+          <div className="footer-buttons">
+            <button className="footer-cta-button">
+              資料ダウンロード
+              <span>Download</span>
+            </button>
+            <button className="footer-contact-button">
+              お問い合わせ
+              <span>Contact</span>
+            </button>
           </div>
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; 2023 ACES Inc. All rights reserved.</p>
+          <div className="footer-links-bottom">
+            <a href="#">ACES Meet</a>
+            <a href="#">note</a>
+            <a href="#">プライバシーポリシー</a>
+            <a href="#">セキュリティポリシー</a>
+            <a href="#">©ACES, Inc.</a>
+          </div>
         </div>
       </div>
     </footer>
