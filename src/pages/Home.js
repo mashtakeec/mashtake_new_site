@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import AnimatedButton from '../components/AnimatedButton';
+import { useEntryAnimation } from '../hooks/useHover';
 import '../styles/Home.css';
 
 const Home = () => {
@@ -27,31 +30,40 @@ const Home = () => {
     return (
         <div className="home">
             {/* Hero Section */}
-            <section className="hero-section">
+            <motion.section 
+                className="hero-section"
+                {...useEntryAnimation()}
+            >
                 <div className="container">
-                    <div className="hero-content">
-                        <div className="hero-text">
-                            <h1 className="hero-title">
+                    <div className="hero-content Style_text-container__8bqHn">
+                        <motion.div 
+                            className="hero-text"
+                            {...useEntryAnimation(0.2)}
+                        >
+                            <h1 className="hero-title Style_section-title__teS9o">
                                 <span className="title-line">アルゴリズムで、</span>
                                 <span className="title-line">シンプルな社会を</span>
                             </h1>
-                            <p className="hero-subtitle">
+                            <p className="hero-subtitle Style_text-container__8bqHn">
                                 ACESは、アルゴリズムを用いて事業開発を行うAI事業会社です。
                                 <br />
                                 ヒトの知見や業務をデジタル化する「AIトランスフォーメーション事業」を通して、
                                 <br />
                                 「シンプルな社会」の実現を目指しています。
                             </p>
-                            <div className="hero-buttons">
-                                <Link to="/about" className="btn btn-primary">
+                            <div className="hero-buttons aces-button-container">
+                                <AnimatedButton href="/about">
                                     私たちについてもっと知る
-                                </Link>
-                                <Link to="/contact" className="btn btn-secondary">
+                                </AnimatedButton>
+                                <AnimatedButton href="/contact">
                                     お問い合わせ
-                                </Link>
+                                </AnimatedButton>
                             </div>
-                        </div>
-                        <div className="hero-visual">
+                        </motion.div>
+                        <motion.div 
+                            className="hero-visual"
+                            {...useEntryAnimation(0.4)}
+                        >
                             <div className="hero-animation">
                                 <img 
                                     src="/resources/images/aces-animation-logo.png" 
@@ -59,29 +71,40 @@ const Home = () => {
                                     className="hero-logo"
                                 />
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
-            </section>
+                <div className="Style_background__FJpaX"></div>
+            </motion.section>
 
             {/* Vision & Mission Section */}
-            <section className="vision-mission-section">
+            <motion.section 
+                className="vision-mission-section"
+                {...useEntryAnimation(0.6)}
+            >
                 <div className="container">
                     <div className="section-header">
-                        <h2 className="section-title">Vision & Mission</h2>
+                        <h2 className="section-title Style_section-title__ESNT4">Vision & Mission</h2>
                     </div>
                     <div className="vision-mission-content">
-                        <div className="vision-card">
-                            <h3>Vision</h3>
-                            <p>アルゴリズムで、シンプルな社会を</p>
-                        </div>
-                        <div className="mission-card">
-                            <h3>Mission</h3>
-                            <p>ヒトの知見と業務をDeep Learningを用いてAI化し、デジタルでの事業開発を推進しています。</p>
-                        </div>
+                        <motion.div 
+                            className="vision-card"
+                            {...useEntryAnimation(0.8)}
+                        >
+                            <h3 className="Style_section-title__a_dyw">Vision</h3>
+                            <p className="Style_text-container__8bqHn">アルゴリズムで、シンプルな社会を</p>
+                        </motion.div>
+                        <motion.div 
+                            className="mission-card"
+                            {...useEntryAnimation(1.0)}
+                        >
+                            <h3 className="Style_section-title___HbCW">Mission</h3>
+                            <p className="Style_text-container__8bqHn">ヒトの知見と業務をDeep Learningを用いてAI化し、デジタルでの事業開発を推進しています。</p>
+                        </motion.div>
                     </div>
                 </div>
-            </section>
+                <div className="Style_background__ZpHBF"></div>
+            </motion.section>
 
             {/* Services Section */}
             <section className="services-section">

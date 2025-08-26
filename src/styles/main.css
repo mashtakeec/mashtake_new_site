@@ -3,10 +3,11 @@
    Clon exacto del sitio https://acesinc.co.jp/
    ======================================== */
 
-/* Importar fuentes */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+/* Importar fuentes más cercanas al sitio ACES original */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&display=swap');
 
 /* Reset y estilos base */
 * {
@@ -20,11 +21,12 @@ html {
 }
 
 body {
-    font-family: 'Noto Sans JP', 'Inter', 'Roboto', sans-serif;
+    font-family: 'M PLUS 1', 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #fff;
     overflow-x: hidden;
+    font-weight: 300;
 }
 
 /* Variables CSS globales */
@@ -434,3 +436,210 @@ a:hover {
 .align-center { align-items: center; }
 .align-start { align-items: flex-start; }
 .align-end { align-items: flex-end; }
+
+/* ========================================
+   ESTILOS ESPECÍFICOS DEL SITIO ACES
+   Implementación exacta según instrucciones
+   ======================================== */
+
+/* === FUENTES TIPOGRÁFICAS ESPECÍFICAS === */
+@font-face {
+    font-family: 'TazuganeGothicStdN-Light';
+    src: url('/fonts/TazuganeGothicStdN-Light.woff2') format('woff2'),
+         url('/fonts/TazuganeGothicStdN-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FuturaLTPro-Book';
+    src: url('/fonts/FuturaLTPro-Book.woff2') format('woff2'),
+         url('/fonts/FuturaLTPro-Book.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FuturaLTPro-Light';
+    src: url('/fonts/FuturaLTPro-Light.woff2') format('woff2'),
+         url('/fonts/FuturaLTPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* === VARIABLES ESPECÍFICAS ACES === */
+:root {
+    --aces-black: rgb(0, 0, 0);
+    --aces-white: rgb(255, 255, 255);
+    --aces-border: rgb(199, 199, 199);
+    --aces-background-subtle: rgba(0, 0, 0, 0.05);
+    --aces-border-subtle: rgba(199, 199, 199, 0.3);
+    --aces-font-primary: "TazuganeGothicStdN-Light", "Noto Sans JP", sans-serif;
+    --aces-font-secondary: "FuturaLTPro-Book", "Inter", sans-serif;
+    --aces-font-light: "FuturaLTPro-Light", "Inter", sans-serif;
+    --aces-transition: all 0.3s ease;
+}
+
+/* === CONTENEDORES DE TEXTO ACES === */
+.Style_text-container__8bqHn {
+    font-family: var(--aces-font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--aces-black);
+    position: relative;
+}
+
+/* === TÍTULOS DE SECCIÓN ACES === */
+.Style_section-title__teS9o,
+.Style_section-title__ESNT4,
+.Style_section-title__a_dyw,
+.Style_section-title___HbCW,
+.Style_section-title__FJjsC,
+.Style_section-title__39zbR,
+.Style_section-title__dttCT {
+    font-family: var(--aces-font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--aces-black);
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+}
+
+/* === BOTONES ACES CON EFECTOS HOVER === */
+.Style_btn__ylrxe.Style_rounded-btn__MV1ZJ,
+.Style_btn__UYEgR.Style_rounded-btn__MV1ZJ,
+.Style_btn__pNrtU.Style_rounded-btn__MV1ZJ,
+.aces-button,
+.aces-btn-rounded {
+    background-color: transparent;
+    color: var(--aces-black);
+    border: 1px solid var(--aces-border);
+    border-radius: 4px;
+    padding: 12px 24px;
+    transition: var(--aces-transition);
+    cursor: pointer;
+    font-family: var(--aces-font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto hover para botones ACES */
+.Style_btn__ylrxe.Style_rounded-btn__MV1ZJ:hover,
+.Style_btn__UYEgR.Style_rounded-btn__MV1ZJ:hover,
+.Style_btn__pNrtU.Style_rounded-btn__MV1ZJ:hover,
+.aces-button:hover,
+.aces-btn-rounded:hover {
+    background-color: var(--aces-black);
+    color: var(--aces-white);
+    border-color: var(--aces-black);
+    transform: scale(1.02);
+}
+
+/* === CONTENEDORES DE BOTONES ACES === */
+.button-container,
+.aces-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    gap: 1rem;
+}
+
+/* === ELEMENTOS DE FONDO ACES === */
+.Style_background__FJpaX,
+.Style_background__ZpHBF,
+.Style_background__KHqh0,
+.aces-background-subtle {
+    position: absolute;
+    background-color: var(--aces-background-subtle);
+    border: 1px solid var(--aces-border-subtle);
+    border-radius: 8px;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* === OVERRIDE DE FUENTES PARA ELEMENTOS PRINCIPALES === */
+.hero-section,
+.hero-title,
+.hero-subtitle,
+.section-title,
+.section-subtitle,
+.service-card h3,
+.service-card h4,
+.project-card h3,
+.project-card h4,
+.technology-card h3,
+.nav-menu a {
+    font-family: var(--aces-font-primary) !important;
+}
+
+/* === MEJORAS ESPECÍFICAS PARA FIDELIDAD VISUAL === */
+.hero-title {
+    font-weight: 300 !important;
+    letter-spacing: 0.02em;
+}
+
+.section-title {
+    font-weight: 300 !important;
+    letter-spacing: 0.02em;
+}
+
+.btn, 
+.btn-primary, 
+.btn-secondary, 
+.btn-outline {
+    font-family: var(--aces-font-primary) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    padding: 12px 24px !important;
+    border-radius: 4px !important;
+    transition: var(--aces-transition) !important;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-outline:hover {
+    transform: scale(1.02) !important;
+}
+
+/* === RESPONSIVE ESPECÍFICO ACES === */
+@media (max-width: 768px) {
+    .Style_text-container__8bqHn {
+        font-size: 12px;
+    }
+    
+    .Style_section-title__teS9o,
+    .Style_section-title__ESNT4,
+    .Style_section-title__a_dyw,
+    .Style_section-title___HbCW,
+    .Style_section-title__FJjsC,
+    .Style_section-title__39zbR,
+    .Style_section-title__dttCT {
+        font-size: 12px;
+    }
+    
+    .aces-button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .Style_btn__ylrxe.Style_rounded-btn__MV1ZJ,
+    .Style_btn__UYEgR.Style_rounded-btn__MV1ZJ,
+    .Style_btn__pNrtU.Style_rounded-btn__MV1ZJ,
+    .aces-button,
+    .aces-btn-rounded {
+        width: 100%;
+        max-width: 300px;
+    }
+}

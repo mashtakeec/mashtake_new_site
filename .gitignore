@@ -51,3 +51,9 @@ jspm_packages/
 
 # dotenv environment variables file
 .env
+
+# Claude Code - archivos temporales y de instrucciones
+INSTRUCCIONES_PARA_CLAUDE_CODE.md
+video-extractor.js
+**/claude-temp-*
+**/*.claude-backup
