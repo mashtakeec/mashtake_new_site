@@ -48,19 +48,21 @@ const Header = () => {
                             <li>
                                 <Link 
                                     to="/about" 
-                                    className={isActive('/about') ? 'active' : ''}
+                                    className={`nav-button ${isActive('/about') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    私たちについて
+                                    <span className="nav-number">2</span>
+                                    <span className="nav-text">私たちについて</span>
                                 </Link>
                             </li>
                             <li className="dropdown">
                                 <Link 
                                     to="/services" 
-                                    className={isActive('/services') ? 'active' : ''}
+                                    className={`nav-button ${isActive('/services') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    事業紹介
+                                    <span className="nav-number">3</span>
+                                    <span className="nav-text">事業紹介</span>
                                 </Link>
                                 <ul className="dropdown-menu">
                                     <li>
@@ -78,46 +80,51 @@ const Header = () => {
                             <li>
                                 <Link 
                                     to="/projects" 
-                                    className={isActive('/projects') ? 'active' : ''}
+                                    className={`nav-button ${isActive('/projects') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    実績
+                                    <span className="nav-number">4</span>
+                                    <span className="nav-text">実績</span>
                                 </Link>
                             </li>
                             <li>
                                 <Link 
                                     to="/technologies" 
-                                    className={isActive('/technologies') ? 'active' : ''}
+                                    className={`nav-button ${isActive('/technologies') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    技術
+                                    <span className="nav-number">5</span>
+                                    <span className="nav-text">技術</span>
                                 </Link>
                             </li>
                             <li>
                                 <Link 
                                     to="/careers" 
-                                    className={isActive('/careers') ? 'active' : ''}
+                                    className={`nav-button ${isActive('/careers') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    採用情報
+                                    <span className="nav-number">6</span>
+                                    <span className="nav-text">採用情報</span>
                                 </Link>
                             </li>
                             <li>
                                 <Link 
                                     to="/news" 
-                                    className={isActive('/news') ? 'active' : ''}
+                                    className={`nav-button ${isActive('/news') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    ニュース
+                                    <span className="nav-number">7</span>
+                                    <span className="nav-text">ニュース</span>
                                 </Link>
                             </li>
                             <li className="dropdown">
                                 <Link 
                                     to="/company" 
-                                    className={isActive('/company') ? 'active' : ''}
+                                    className={`nav-button ${isActive('/company') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    会社案内
+                                    <span className="nav-number">8</span>
+                                    <span className="nav-text">会社案内</span>
                                 </Link>
                                 <ul className="dropdown-menu">
                                     <li>
@@ -145,10 +152,11 @@ const Header = () => {
                             <li>
                                 <Link 
                                     to="/contact" 
-                                    className={isActive('/contact') ? 'active' : ''}
+                                    className={`nav-button ${isActive('/contact') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    お問い合わせ
+                                    <span className="nav-number">9</span>
+                                    <span className="nav-text">お問い合わせ</span>
                                 </Link>
                             </li>
                         </ul>

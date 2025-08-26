@@ -54,6 +54,9 @@ jspm_packages/
 
 # Claude Code - archivos temporales y de instrucciones
 INSTRUCCIONES_PARA_CLAUDE_CODE.md
+cloudecode_cursor_instructions.md
+section_by_section_comparison.md
+acesinc_full_analysis.md
 video-extractor.js
 **/claude-temp-*
 **/*.claude-backup

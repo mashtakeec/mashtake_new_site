@@ -92,7 +92,7 @@
     display: -ms-flexbox;
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 1.5rem;
     margin: 0;
     padding: 0;
     -webkit-box-align: center;
@@ -105,43 +105,70 @@
     position: relative;
 }
 
-.nav-menu a {
-    color: #1a1a1a;
+/* Navigation Button Styles */
+.nav-button {
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1a1a1a !important;
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.95rem;
-    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
     position: relative;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     white-space: nowrap;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    background: rgba(0, 0, 0, 0.02);
 }
 
-.nav-menu a:hover {
+.nav-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: rgba(74, 144, 226, 0.1);
     color: #4a90e2;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
-.nav-menu a.active {
-    color: #4a90e2;
+.nav-text {
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
+.nav-button:hover {
+    color: #4a90e2 !important;
+    background: rgba(74, 144, 226, 0.05);
+    border-color: rgba(74, 144, 226, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+}
+
+.nav-button:hover .nav-number {
     background: #4a90e2;
-    -webkit-transition: width 0.3s ease;
-    -o-transition: width 0.3s ease;
-    transition: width 0.3s ease;
+    color: white;
+    transform: scale(1.1);
 }
 
-.nav-menu a:hover::after,
-.nav-menu a.active::after {
-    width: 100%;
+.nav-button.active {
+    color: #4a90e2 !important;
+    background: rgba(74, 144, 226, 0.08);
+    border-color: rgba(74, 144, 226, 0.3);
+}
+
+.nav-button.active .nav-number {
+    background: #4a90e2;
+    color: white;
+}
+
+/* Remove old underline effects */
+.nav-button::after {
+    display: none;
 }
 
 /* Dropdown */
@@ -313,11 +340,18 @@
 /* Responsive */
 @media (max-width: 1024px) {
     .nav-menu {
-        gap: 2rem;
+        gap: 1.2rem;
     }
     
-    .nav-menu a {
-        font-size: 0.9rem;
+    .nav-button {
+        font-size: 0.85rem;
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .nav-number {
+        width: 18px;
+        height: 18px;
+        font-size: 0.7rem;
     }
 }
 

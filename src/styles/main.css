@@ -445,6 +445,620 @@ a:hover {
     }
 }
 
+/* ===== NEW SECTIONS STYLES ===== */
+
+/* Common styles for new sections */
+.section-headers {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.section-title-en {
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.section-title-jp {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* CTA Buttons */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border: 2px solid;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: transparent;
+    cursor: pointer;
+}
+
+.orange-cta {
+    border-color: #ff6b35;
+    color: #ff6b35;
+}
+
+.orange-cta:hover {
+    background: #ff6b35;
+    color: white;
+}
+
+.purple-cta {
+    border-color: #8b5cf6;
+    color: #8b5cf6;
+}
+
+.purple-cta:hover {
+    background: #8b5cf6;
+    color: white;
+}
+
+.red-cta {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.red-cta:hover {
+    background: #ef4444;
+    color: white;
+}
+
+/* WHO WE ARE SECTION */
+.who-we-are {
+    padding: 6rem 0;
+    background: white;
+}
+
+.who-we-are-content {
+    max-width: 800px;
+}
+
+.who-we-are-main-text {
+    margin: 2rem 0 3rem;
+}
+
+.main-statement {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    font-weight: 300;
+    margin: 0;
+}
+
+.highlight-text {
+    color: var(--text-dark);
+}
+
+.who-we-are-description {
+    margin-bottom: 3rem;
+}
+
+.who-we-are-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* TECHNOLOGIES SECTION */
+.technologies {
+    padding: 6rem 0;
+    background: white;
+}
+
+.technologies-intro {
+    margin-bottom: 4rem;
+    max-width: 800px;
+}
+
+.intro-title {
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.intro-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.technologies-cards {
+    margin-bottom: 4rem;
+}
+
+.tech-card {
+    position: relative;
+    height: 200px;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-2px);
+}
+
+.tech-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.communication-card .tech-card-bg {
+    background: linear-gradient(45deg, #ff6b35, #ff8c5a);
+}
+
+.human-digital-card .tech-card-bg {
+    background: linear-gradient(45deg, #8b5cf6, #a78bfa);
+}
+
+.mobility-card .tech-card-bg {
+    background: linear-gradient(45deg, #10b981, #34d399);
+}
+
+.tech-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    color: white;
+}
+
+.tech-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 2rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid;
+    border-radius: 20px;
+}
+
+.orange-border {
+    border-color: #ff6b35;
+    background: rgba(255, 107, 53, 0.2);
+}
+
+.purple-border {
+    border-color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.2);
+}
+
+.green-border {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.2);
+}
+
+.tech-title-jp {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.tech-title-en {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* NEWS SECTION */
+.news {
+    padding: 6rem 0;
+    background: white;
+}
+
+.news-content {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.news-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.filter-btn {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    background: #f0f0f0;
+    color: #666;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    color: white;
+}
+
+.green-filter.active,
+.green-filter:hover {
+    background: #10b981;
+}
+
+.orange-filter.active,
+.orange-filter:hover {
+    background: #ff6b35;
+}
+
+.purple-filter.active,
+.purple-filter:hover {
+    background: #8b5cf6;
+}
+
+.pink-filter.active,
+.pink-filter:hover {
+    background: #ec4899;
+}
+
+.news-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.news-card {
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid;
+    position: relative;
+}
+
+.light-purple {
+    background: #faf5ff;
+}
+
+.light-orange {
+    background: #fff7ed;
+}
+
+.light-green {
+    background: #f0fdf4;
+}
+
+.news-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.news-category {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.external-link-icon {
+    color: #666;
+}
+
+.news-card-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+}
+
+.news-date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.news-title {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.news-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.person-image {
+    background: linear-gradient(45deg, #ddd6fe, #c7d2fe);
+}
+
+.construction-image {
+    background: linear-gradient(45deg, #fed7aa, #fde68a);
+}
+
+.app-image {
+    background: linear-gradient(45deg, #bbf7d0, #d9f99d);
+}
+
+/* CAREERS SECTION */
+.careers {
+    position: relative;
+    min-height: 500px;
+}
+
+.careers-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #1f2937, #374151);
+    background-size: cover;
+    background-position: center;
+}
+
+.careers-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.careers .container {
+    position: relative;
+    z-index: 3;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.careers-content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+}
+
+.careers .section-title-en,
+.careers .section-title-jp {
+    color: white;
+}
+
+.careers-message {
+    margin: 3rem 0;
+}
+
+.careers-catchphrase {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+}
+
+.careers-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.careers-cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.external-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* FINAL SECTIONS */
+.final-sections {
+    padding: 6rem 0;
+    background: white;
+}
+
+.final-sections-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.final-sections-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 2rem;
+}
+
+.final-section {
+    position: relative;
+    padding: 3rem;
+    border-radius: 8px;
+    border: 3px solid;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.next-dx-section {
+    background: #fef3c7;
+    border-color: #ff6b35;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.downloads-section {
+    background: #faf5ff;
+    border-color: #8b5cf6;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.contact-section {
+    background: #f0f9ff;
+    border-color: #3b82f6;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.section-label {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.section-content h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.section-content .section-title-jp {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+.section-decoration {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.geometric-squares {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+}
+
+.square-1 {
+    background: #ff6b35;
+}
+
+.square-2 {
+    background: #ffa500;
+}
+
+.square-3 {
+    background: #ffcd7a;
+}
+
+/* RESPONSIVE STYLES FOR NEW SECTIONS */
+@media (max-width: 768px) {
+    .section-title-en {
+        font-size: 2rem;
+    }
+    
+    .main-statement {
+        font-size: 1.8rem;
+    }
+    
+    .intro-title {
+        font-size: 1.6rem;
+    }
+    
+    .news-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .news-filters {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .news-card-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .news-image {
+        width: 100%;
+        height: 120px;
+    }
+    
+    .careers-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .careers-catchphrase {
+        font-size: 1.8rem;
+    }
+    
+    .final-sections-grid {
+        gap: 1rem;
+    }
+    
+    .final-section {
+        padding: 2rem;
+        min-height: 150px;
+    }
+    
+    .tech-card {
+        height: 150px;
+    }
+    
+    .tech-card-content {
+        padding: 1.5rem;
+    }
+    
+    .tech-number {
+        font-size: 1.2rem;
+        margin-right: 1rem;
+    }
+    
+    .tech-title-jp {
+        font-size: 1.1rem;
+    }
+}
+
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;

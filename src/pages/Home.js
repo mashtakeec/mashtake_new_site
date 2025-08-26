@@ -1,12 +1,144 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import AnimatedButton from '../components/AnimatedButton';
-import { useEntryAnimation } from '../hooks/useHover';
+import { gsap } from 'gsap';
+import lottie from 'lottie-web';
 import '../styles/Home.css';
+import WhoWeAre from '../components/WhoWeAre';
+import Technologies from '../components/Technologies';
+import News from '../components/News';
+import Careers from '../components/Careers';
+import FinalSections from '../components/FinalSections';
 
 const Home = () => {
+    const scrambleRef1 = useRef(null);
+    const scrambleRef2 = useRef(null);
+    const scrambleRef3 = useRef(null);
+    const scrambleRef4 = useRef(null);
+    const motionBgRef = useRef(null);
+
     useEffect(() => {
+        // スクランブルテキストエフェクト
+        const scrambleText = (element, finalText, duration = 2) => {
+            const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            let frame = 0;
+            const frameRate = 30;
+            const totalFrames = duration * frameRate;
+            
+            const animate = () => {
+                let scrambledText = '';
+                for (let i = 0; i < finalText.length; i++) {
+                    if (frame / totalFrames > i / finalText.length) {
+                        scrambledText += finalText[i];
+                    } else {
+                        scrambledText += chars[Math.floor(Math.random() * chars.length)];
+                    }
+                }
+                element.textContent = scrambledText;
+                
+                if (frame < totalFrames) {
+                    frame++;
+                    requestAnimationFrame(animate);
+                } else {
+                    element.textContent = finalText;
+                }
+            };
+            
+            animate();
+        };
+
+        // アニメーション開始
+        const startAnimations = () => {
+            setTimeout(() => scrambleText(scrambleRef1.current, 'アルゴリズムで、', 1.5), 500);
+            setTimeout(() => scrambleText(scrambleRef2.current, '人の働き方に余白をつくる。', 2), 1000);
+            setTimeout(() => scrambleText(scrambleRef3.current, 'Vision', 1), 2000);
+            setTimeout(() => scrambleText(scrambleRef4.current, 'Mission', 1), 2200);
+        };
+
+        // Lottie背景アニメーション（SVGデータを模擬）
+        const createBackgroundAnimation = () => {
+            if (motionBgRef.current) {
+                // 幾何学的な背景を作成
+                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                svg.setAttribute('viewBox', '0 0 1920 1080');
+                svg.setAttribute('width', '100%');
+                svg.setAttribute('height', '100%');
+                svg.style.position = 'absolute';
+                svg.style.top = '0';
+                svg.style.left = '0';
+                svg.style.zIndex = '1';
+
+                // 背景パス1
+                const path1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path1.setAttribute('d', 'M619.40771484375,-544 C619.40771484375,-544 -962,-544 -962,-544 C-962,-544 -963,544 -963,544 C-963,544 -3.3308920860290527,542.1386108398438 -3.3308920860290527,542.1386108398438 C-3.3308920860290527,542.1386108398438 619.40771484375,-544 619.40771484375,-544z');
+                path1.setAttribute('fill', '#fcfcfc');
+                path1.setAttribute('transform', 'translate(960, 540)');
+
+                // 背景パス2
+                const path2 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path2.setAttribute('d', 'M961.25,-324.3614501953125 C961.25,-324.3614501953125 465.0522155761719,542.43115234375 465.0522155761719,542.43115234375 C465.0522155761719,542.43115234375 963,543.5 963,543.5 C963,543.5 961.25,-324.3614501953125 961.25,-324.3614501953125z');
+                path2.setAttribute('fill', '#fcfcfc');
+                path2.setAttribute('transform', 'translate(960, 540)');
+
+                svg.appendChild(path1);
+                svg.appendChild(path2);
+                motionBgRef.current.appendChild(svg);
+
+                // GSAPアニメーション
+                gsap.to(path1, {
+                    rotation: 360,
+                    duration: 20,
+                    repeat: -1,
+                    ease: "none",
+                    transformOrigin: "center"
+                });
+
+                gsap.to(path2, {
+                    rotation: -360,
+                    duration: 25,
+                    repeat: -1,
+                    ease: "none",
+                    transformOrigin: "center"
+                });
+            }
+        };
+
+        startAnimations();
+        createBackgroundAnimation();
+
+        // Vision/Mission タブ切り替え
+        const handleTabSwitch = () => {
+            const visionTab = scrambleRef3.current;
+            const missionTab = scrambleRef4.current;
+
+            if (visionTab && missionTab) {
+                visionTab.style.color = '#e9e9e9';
+                missionTab.style.color = '#4b4b4b';
+
+                const switchToMission = () => {
+                    gsap.to(visionTab, { color: '#4b4b4b', duration: 0.5 });
+                    gsap.to(missionTab, { color: '#e9e9e9', duration: 0.5 });
+                };
+
+                const switchToVision = () => {
+                    gsap.to(visionTab, { color: '#e9e9e9', duration: 0.5 });
+                    gsap.to(missionTab, { color: '#4b4b4b', duration: 0.5 });
+                };
+
+                // 5秒ごとに切り替え
+                let isVision = true;
+                setInterval(() => {
+                    if (isVision) {
+                        switchToMission();
+                    } else {
+                        switchToVision();
+                    }
+                    isVision = !isVision;
+                }, 5000);
+            }
+        };
+
+        setTimeout(handleTabSwitch, 3000);
+
         // Scroll suave para enlaces internos
         const handleSmoothScroll = (e) => {
             const href = e.target.getAttribute('href');
@@ -29,82 +161,40 @@ const Home = () => {
 
     return (
         <div className="home">
-            {/* Hero Section */}
-            <motion.section 
-                className="hero-section"
-                {...useEntryAnimation()}
-            >
-                <div className="container">
-                    <div className="hero-content Style_text-container__8bqHn">
-                        <motion.div 
-                            className="hero-text"
-                            {...useEntryAnimation(0.2)}
-                        >
-                            <h1 className="hero-title Style_section-title__teS9o" style={{fontFamily: 'source-han-sans-japanese, sans-serif', fontSize: '48px', fontWeight: 200}}>
-                                <span className="title-line">アルゴリズムで、</span>
-                                <span className="title-line">シンプルな社会を</span>
-                            </h1>
-                            <p className="hero-subtitle Style_text-container__8bqHn">
-                                ACESは、アルゴリズムを用いて事業開発を行うAI事業会社です。
-                                <br />
-                                ヒトの知見や業務をデジタル化する「AIトランスフォーメーション事業」を通して、
-                                <br />
-                                「シンプルな社会」の実現を目指しています。
-                            </p>
-                            <div className="hero-buttons aces-button-container">
-                                <AnimatedButton href="/about">
-                                    私たちについてもっと知る
-                                </AnimatedButton>
-                                <AnimatedButton href="/contact">
-                                    お問い合わせ
-                                </AnimatedButton>
-                            </div>
-                        </motion.div>
-                        <motion.div 
-                            className="hero-visual"
-                            {...useEntryAnimation(0.4)}
-                        >
-                            <div className="hero-animation">
-                                <img 
-                                    src="/resources/images/aces-animation-logo.png" 
-                                    alt="ACES Animation" 
-                                    className="hero-logo"
-                                />
-                            </div>
-                        </motion.div>
+            {/* Hero Section - ACES Style */}
+            <section className="main-visual">
+                <div className="text-container">
+                    <p ref={scrambleRef1} className="copy-text"></p>
+                    <p ref={scrambleRef2} className="copy-text"></p>
+                    <div className="desc-container">
+                        <span ref={scrambleRef3} className="text-vision"></span>
+                        <span className="line"></span>
+                        <span ref={scrambleRef4} className="text-mission"></span>
                     </div>
                 </div>
-                <div className="Style_background__FJpaX"></div>
-            </motion.section>
+                <div ref={motionBgRef} className="motionbg">
+                    {/* SVG背景アニメーションがここに動的に追加される */}
+                </div>
+            </section>
 
             {/* Vision & Mission Section */}
-            <motion.section 
-                className="vision-mission-section"
-                {...useEntryAnimation(0.6)}
-            >
+            <section className="vision-mission-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2 className="section-title Style_section-title__ESNT4">Vision & Mission</h2>
+                        <h2 className="section-title">Vision & Mission</h2>
                     </div>
                     <div className="vision-mission-content">
-                        <motion.div 
-                            className="vision-card"
-                            {...useEntryAnimation(0.8)}
-                        >
-                            <h3 className="Style_section-title__a_dyw">Vision</h3>
-                            <p className="Style_text-container__8bqHn">アルゴリズムで、シンプルな社会を</p>
-                        </motion.div>
-                        <motion.div 
-                            className="mission-card"
-                            {...useEntryAnimation(1.0)}
-                        >
-                            <h3 className="Style_section-title___HbCW">Mission</h3>
-                            <p className="Style_text-container__8bqHn">ヒトの知見と業務をDeep Learningを用いてAI化し、デジタルでの事業開発を推進しています。</p>
-                        </motion.div>
+                        <div className="vision-card">
+                            <h3>Vision</h3>
+                            <p>アルゴリズムで、シンプルな社会を</p>
+                        </div>
+                        <div className="mission-card">
+                            <h3>Mission</h3>
+                            <p>ヒトの知見と業務をDeep Learningを用いてAI化し、デジタルでの事業開発を推進しています。</p>
+                        </div>
                     </div>
                 </div>
-                <div className="Style_background__ZpHBF"></div>
-            </motion.section>
+            </section>
 
             {/* Services Section */}
             <section className="services-section">
@@ -214,8 +304,8 @@ const Home = () => {
             <section className="clients-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2 className="section-title Style_section-title__dttCT">クライアント企業</h2>
-                        <p className="section-subtitle Style_text-container__8bqHn">
+                        <h2 className="section-title">クライアント企業</h2>
+                        <p className="section-subtitle">
                             ACESと共に歩んできた企業を紹介します。
                         </p>
                         <p className="section-description">
@@ -280,8 +370,8 @@ const Home = () => {
             <section className="technologies-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2 className="section-title Style_section-title__teS9o">技術</h2>
-                        <p className="section-subtitle Style_text-container__8bqHn">
+                        <h2 className="section-title">技術</h2>
+                        <p className="section-subtitle">
                             最先端アルゴリズムを独自モジュール化し、提供しています。
                         </p>
                         <p className="section-description">
@@ -318,10 +408,10 @@ const Home = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="technologies-more button-container">
-                        <AnimatedButton href="/technologies">
+                    <div className="technologies-more">
+                        <Link to="/technologies" className="btn btn-outline">
                             すべての技術を見る
-                        </AnimatedButton>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -361,30 +451,34 @@ const Home = () => {
                                 <h3>資料ダウンロード</h3>
                                 <p>会社紹介や実績、技術に関する情報など、各種資料のダウンロードはこちらからどうぞ。</p>
                                 <Link to="/company/downloads" className="btn btn-outline">
-                                    資料ダウンロード
+                                    資料をダウンロード
                                 </Link>
                             </div>
-                            <div className="cta-card-image">
-                                <img src="/resources/images/cta-download-bg.jpg" alt="Downloads" />
-                            </div>
+                            <div className="cta-card-bg downloads-bg"></div>
                         </div>
                         <div className="cta-card contact">
                             <div className="cta-card-content">
                                 <h3>お問い合わせ</h3>
-                                <p>ご協業のご相談、採用、取材に関するお問い合わせなど、お気軽にご連絡ください。</p>
-                                <Link to="/contact" className="btn btn-primary">
+                                <p>ご質問やご相談など、お気軽にお問い合わせください。専門スタッフが対応いたします。</p>
+                                <Link to="/contact" className="btn btn-outline">
                                     お問い合わせ
                                 </Link>
                             </div>
-                            <div className="cta-card-image">
-                                <img src="/resources/images/cta-contact-bg.jpg" alt="Contact" />
-                            </div>
+                            <div className="cta-card-bg contact-bg"></div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            {/* Nuevas secciones añadidas */}
+            <WhoWeAre />
+            <Technologies />
+            <News />
+            <Careers />
+            <FinalSections />
         </div>
     );
 };
 
 export default Home;
+
