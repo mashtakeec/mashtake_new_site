@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#4a90e2" />
+    <meta name="description" content="ACES - アルゴリズムで、シンプルな社会を。AI事業会社として、ヒトの知見や業務をデジタル化するAIトランスフォーメーション事業を推進しています。" />
+    <meta name="keywords" content="ACES, AI, アルゴリズム, DX, デジタルトランスフォーメーション, 機械学習, 深層学習" />
+    <meta name="author" content="ACES, Inc." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://acesinc.co.jp/" />
+    <meta property="og:title" content="ACES - アルゴリズムで、シンプルな社会を" />
+    <meta property="og:description" content="AI事業会社として、ヒトの知見や業務をデジタル化するAIトランスフォーメーション事業を推進しています。" />
+    <meta property="og:image" content="%PUBLIC_URL%/resources/images/aces-animation-logo.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://acesinc.co.jp/" />
+    <meta property="twitter:title" content="ACES - アルゴリズムで、シンプルな社会を" />
+    <meta property="twitter:description" content="AI事業会社として、ヒトの知見や業務をデジタル化するAIトランスフォーメーション事業を推進しています。" />
+    <meta property="twitter:image" content="%PUBLIC_URL%/resources/images/aces-animation-logo.png" />
+    
+    <title>ACES - アルゴリズムで、シンプルな社会を</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="%PUBLIC_URL%/resources/images/aces-animation-logo.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/resources/images/aces-animation-logo.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css" />
+    
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="%PUBLIC_URL%/resources/images/aces-animation-logo.png" />
+</head>
+<body>
+    <noscript>
+        <div style="text-align: center; padding: 2rem; font-family: 'Noto Sans JP', sans-serif;">
+            <h1>ACES</h1>
+            <p>このアプリケーションを実行するには、JavaScriptを有効にする必要があります。</p>
+            <p>This application requires JavaScript to be enabled.</p>
+        </div>
+    </noscript>
+    
+    <div id="root"></div>
+    
+    <!-- Loading indicator -->
+    <div id="loading" style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        font-family: 'Noto Sans JP', sans-serif;
+    ">
+        <div style="text-align: center;">
+            <div style="
+                width: 60px;
+                height: 60px;
+                border: 4px solid #f3f3f3;
+                border-top: 4px solid #4a90e2;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                margin: 0 auto 1rem;
+            "></div>
+            <h2 style="color: #1a1a1a; margin-bottom: 0.5rem;">ACES</h2>
+            <p style="color: #666;">読み込み中...</p>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        #loading.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+    </style>
+    
+    <script>
+        // Hide loading indicator when React app is ready
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loading = document.getElementById('loading');
+                if (loading) {
+                    loading.classList.add('hidden');
+                    setTimeout(function() {
+                        loading.style.display = 'none';
+                    }, 500);
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
