@@ -208,16 +208,10 @@ const Home = () => {
                         </Link>
                     </div>
                 </div>
-            </motion.section>
+            </section>
 
             {/* Clients Section */}
-            <motion.section 
-                className="clients-section"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={fadeInUp}
-            >
+            <section className="clients-section">
                 <div className="container">
                     <div className="section-header">
                         <h2 className="section-title Style_section-title__dttCT">クライアント企業</h2>
@@ -280,16 +274,10 @@ const Home = () => {
                         <p>and more...</p>
                     </div>
                 </div>
-            </motion.section>
+            </section>
 
             {/* Technologies Section */}
-            <motion.section 
-                className="technologies-section"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={staggerContainer}
-            >
+            <section className="technologies-section">
                 <div className="container">
                     <div className="section-header">
                         <h2 className="section-title Style_section-title__teS9o">技術</h2>
@@ -302,7 +290,7 @@ const Home = () => {
                         </p>
                     </div>
                     <div className="technologies-grid">
-                        <motion.div className="technology-card" variants={staggerItem}>
+                        <div className="technology-card">
                             <div className="technology-number">01</div>
                             <h3>コミュニケーションの科学</h3>
                             <h4>Communication Intelligence</h4>
@@ -310,8 +298,8 @@ const Home = () => {
                                 人と人、人とシステムのコミュニケーションを科学的に分析し、
                                 最適な相互作用を実現する技術です。
                             </p>
-                        </motion.div>
-                        <motion.div className="technology-card" variants={staggerItem}>
+                        </div>
+                        <div className="technology-card">
                             <div className="technology-number">02</div>
                             <h3>ヒトの行動・属性のデジタル再現</h3>
                             <h4>Human Digital Twin</h4>
@@ -319,8 +307,8 @@ const Home = () => {
                                 人の行動パターンや属性をデジタル上で再現し、
                                 予測や最適化に活用する技術です。
                             </p>
-                        </motion.div>
-                        <motion.div className="technology-card" variants={staggerItem}>
+                        </div>
+                        <div className="technology-card">
                             <div className="technology-number">03</div>
                             <h3>モビリティデータの分析</h3>
                             <h4>Mobility Intelligence</h4>
@@ -328,7 +316,7 @@ const Home = () => {
                                 移動データを分析し、交通最適化や都市計画に
                                 活用する技術です。
                             </p>
-                        </motion.div>
+                        </div>
                     </div>
                     <div className="technologies-more button-container">
                         <AnimatedButton href="/technologies">
@@ -336,8 +324,7 @@ const Home = () => {
                         </AnimatedButton>
                     </div>
                 </div>
-                <AcesBackgroundElement animate={true} />
-            </motion.section>
+            </section>
 
             {/* CTA Section */}
             <section className="cta-section">
@@ -392,10 +379,10 @@ const Home = () => {
                             <div className="cta-card-image">
                                 <img src="/resources/images/cta-contact-bg.jpg" alt="Contact" />
                             </div>
-                        </motion.div>
-                    </motion.div>
+                        </div>
+                    </div>
                 </div>
-            </motion.section>
+            </section>
         </div>
     );
 };
