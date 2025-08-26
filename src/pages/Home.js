@@ -208,14 +208,20 @@ const Home = () => {
                         </Link>
                     </div>
                 </div>
-            </section>
+            </motion.section>
 
             {/* Clients Section */}
-            <section className="clients-section">
+            <motion.section 
+                className="clients-section"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={fadeInUp}
+            >
                 <div className="container">
                     <div className="section-header">
-                        <h2 className="section-title">クライアント企業</h2>
-                        <p className="section-subtitle">
+                        <h2 className="section-title Style_section-title__dttCT">クライアント企業</h2>
+                        <p className="section-subtitle Style_text-container__8bqHn">
                             ACESと共に歩んできた企業を紹介します。
                         </p>
                         <p className="section-description">
@@ -274,14 +280,20 @@ const Home = () => {
                         <p>and more...</p>
                     </div>
                 </div>
-            </section>
+            </motion.section>
 
             {/* Technologies Section */}
-            <section className="technologies-section">
+            <motion.section 
+                className="technologies-section"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={staggerContainer}
+            >
                 <div className="container">
                     <div className="section-header">
-                        <h2 className="section-title">技術</h2>
-                        <p className="section-subtitle">
+                        <h2 className="section-title Style_section-title__teS9o">技術</h2>
+                        <p className="section-subtitle Style_text-container__8bqHn">
                             最先端アルゴリズムを独自モジュール化し、提供しています。
                         </p>
                         <p className="section-description">
@@ -290,7 +302,7 @@ const Home = () => {
                         </p>
                     </div>
                     <div className="technologies-grid">
-                        <div className="technology-card">
+                        <motion.div className="technology-card" variants={staggerItem}>
                             <div className="technology-number">01</div>
                             <h3>コミュニケーションの科学</h3>
                             <h4>Communication Intelligence</h4>
@@ -298,8 +310,8 @@ const Home = () => {
                                 人と人、人とシステムのコミュニケーションを科学的に分析し、
                                 最適な相互作用を実現する技術です。
                             </p>
-                        </div>
-                        <div className="technology-card">
+                        </motion.div>
+                        <motion.div className="technology-card" variants={staggerItem}>
                             <div className="technology-number">02</div>
                             <h3>ヒトの行動・属性のデジタル再現</h3>
                             <h4>Human Digital Twin</h4>
@@ -307,8 +319,8 @@ const Home = () => {
                                 人の行動パターンや属性をデジタル上で再現し、
                                 予測や最適化に活用する技術です。
                             </p>
-                        </div>
-                        <div className="technology-card">
+                        </motion.div>
+                        <motion.div className="technology-card" variants={staggerItem}>
                             <div className="technology-number">03</div>
                             <h3>モビリティデータの分析</h3>
                             <h4>Mobility Intelligence</h4>
@@ -316,15 +328,16 @@ const Home = () => {
                                 移動データを分析し、交通最適化や都市計画に
                                 活用する技術です。
                             </p>
-                        </div>
+                        </motion.div>
                     </div>
-                    <div className="technologies-more">
-                        <Link to="/technologies" className="btn btn-outline">
+                    <div className="technologies-more button-container">
+                        <AnimatedButton href="/technologies">
                             すべての技術を見る
-                        </Link>
+                        </AnimatedButton>
                     </div>
                 </div>
-            </section>
+                <AcesBackgroundElement animate={true} />
+            </motion.section>
 
             {/* CTA Section */}
             <section className="cta-section">
@@ -379,10 +392,10 @@ const Home = () => {
                             <div className="cta-card-image">
                                 <img src="/resources/images/cta-contact-bg.jpg" alt="Contact" />
                             </div>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 </div>
-            </section>
+            </motion.section>
         </div>
     );
 };

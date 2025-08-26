@@ -3,11 +3,8 @@
    Clon exacto del sitio https://acesinc.co.jp/
    ======================================== */
 
-/* Importar fuentes más cercanas al sitio ACES original */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&display=swap');
+/* Adobe Fonts - ya cargadas en index.html */
+/* futura-pt y source-han-sans-japanese */
 
 /* Reset y estilos base */
 * {
@@ -21,7 +18,7 @@ html {
 }
 
 body {
-    font-family: 'M PLUS 1', 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+    font-family: source-han-sans-japanese, 'Noto Sans JP', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #fff;
@@ -442,33 +439,14 @@ a:hover {
    Implementación exacta según instrucciones
    ======================================== */
 
-/* === FUENTES TIPOGRÁFICAS ESPECÍFICAS === */
-@font-face {
-    font-family: 'TazuganeGothicStdN-Light';
-    src: url('/fonts/TazuganeGothicStdN-Light.woff2') format('woff2'),
-         url('/fonts/TazuganeGothicStdN-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'FuturaLTPro-Book';
-    src: url('/fonts/FuturaLTPro-Book.woff2') format('woff2'),
-         url('/fonts/FuturaLTPro-Book.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'FuturaLTPro-Light';
-    src: url('/fonts/FuturaLTPro-Light.woff2') format('woff2'),
-         url('/fonts/FuturaLTPro-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
+/* === FUENTES TIPOGRÁFICAS DE ADOBE FONTS === */
+/* Ya cargadas mediante Adobe Fonts kit en index.html */
+/* Fuentes disponibles:
+   - source-han-sans-japanese (weights: 100, 200, 300, 400, 700)
+   - futura-pt (weights: 400, 700)
+   - futura-pt-bold (weight: 700)
+   - yu-gothic-pr6n (weight: 400)
+*/
 
 /* === VARIABLES ESPECÍFICAS ACES === */
 :root {
@@ -477,9 +455,11 @@ a:hover {
     --aces-border: rgb(199, 199, 199);
     --aces-background-subtle: rgba(0, 0, 0, 0.05);
     --aces-border-subtle: rgba(199, 199, 199, 0.3);
-    --aces-font-primary: "TazuganeGothicStdN-Light", "Noto Sans JP", sans-serif;
-    --aces-font-secondary: "FuturaLTPro-Book", "Inter", sans-serif;
-    --aces-font-light: "FuturaLTPro-Light", "Inter", sans-serif;
+    --aces-font-primary: source-han-sans-japanese, "Noto Sans JP", sans-serif;
+    --aces-font-secondary: futura-pt, "Inter", sans-serif;
+    --aces-font-light: source-han-sans-japanese, "Noto Sans JP", sans-serif;
+    --aces-font-futura-bold: futura-pt-bold, futura-pt, sans-serif;
+    --aces-font-yu: yu-gothic-pr6n, "Yu Gothic", sans-serif;
     --aces-transition: all 0.3s ease;
 }
 
@@ -642,4 +622,45 @@ a:hover {
         width: 100%;
         max-width: 300px;
     }
+}
+
+/* === ESTILOS ESPECÍFICOS PARA PESOS DE FUENTE === */
+.font-weight-100 { font-weight: 100; }
+.font-weight-200 { font-weight: 200; }
+.font-weight-300 { font-weight: 300; }
+.font-weight-400 { font-weight: 400; }
+.font-weight-700 { font-weight: 700; }
+
+/* Aplicar fuentes específicas según contexto */
+.japanese-text {
+    font-family: source-han-sans-japanese, sans-serif;
+    font-weight: 300;
+}
+
+.english-text {
+    font-family: futura-pt, sans-serif;
+    font-weight: 400;
+}
+
+.bold-text {
+    font-family: futura-pt-bold, futura-pt, sans-serif;
+    font-weight: 700;
+}
+
+/* Para textos alternativos */
+.yu-gothic-text {
+    font-family: yu-gothic-pr6n, "Yu Gothic", sans-serif;
+    font-weight: 400;
+}
+
+/* Ajustes específicos para títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: source-han-sans-japanese, sans-serif;
+    font-weight: 300;
+}
+
+/* Para texto en inglés en títulos */
+.title-english {
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
 }
