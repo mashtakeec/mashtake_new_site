@@ -177,6 +177,9 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Who We Are Section */}
+            <WhoWeAre />
+
             {/* Vision & Mission Section */}
             <section className="vision-mission-section">
                 <div className="container">
@@ -471,7 +474,6 @@ const Home = () => {
             </section>
 
             {/* Nuevas secciones añadidas */}
-            <WhoWeAre />
             <Technologies />
             <News />
             <Careers />
