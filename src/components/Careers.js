@@ -10,7 +10,7 @@ const Careers = () => {
                     <div className="careers-content">
                         <div className="section-headers">
                             <h2 className="section-title-en">Careers</h2>
-                            <h3 className="section-title-jp">採用情報</h3>
+                            <span className="section-title-jp">採用情報</span>
                         </div>
                         
                         <div className="careers-message">

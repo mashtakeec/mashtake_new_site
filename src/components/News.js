@@ -56,7 +56,7 @@ const News = () => {
                 <div className="news-header">
                     <div className="section-headers">
                         <h2 className="section-title-en">News</h2>
-                        <h3 className="section-title-jp">ニュース</h3>
+                        <span className="section-title-jp">ニュース</span>
                     </div>
                 </div>
 

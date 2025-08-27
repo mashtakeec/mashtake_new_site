@@ -8,7 +8,7 @@ const Technologies = () => {
                 <div className="technologies-header">
                     <div className="section-headers">
                         <h2 className="section-title-en">Technologies</h2>
-                        <h3 className="section-title-jp">技術</h3>
+                        <span className="section-title-jp">技術</span>
                     </div>
                     
                     <div className="technologies-intro">

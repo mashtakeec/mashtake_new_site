@@ -180,6 +180,37 @@ const Home = () => {
             {/* Who We Are Section */}
             <WhoWeAre />
 
+            {/* Services Section */}
+            <section className="services-section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2 className="section-title-en">Services</h2>
+                        <span className="section-title-jp">事業紹介</span>
+                        <p className="section-subtitle">
+                            ヒトの知見と業務をDeep Learningを用いてAI化し、デジタルでの事業開発を推進しています。
+                        </p>
+                    </div>
+                    <div className="services-grid">
+                        <div className="service-card dx-partner-card">
+                            <h3>DX Partner Service</h3>
+                            <h4>DXパートナーサービス</h4>
+                            <p>
+                                事業・業界を変えたいと立ち上がった人とともに、AI専門家集団がプロジェクトを通じて、
+                                さまざまな業界のDX推進をお手伝いします。
+                            </p>
+                        </div>
+                        <div className="service-card ai-software-card">
+                            <h3>AI Software Service</h3>
+                            <h4>AIソフトウェアサービス</h4>
+                            <p>
+                                さまざまな業種のパートナーとDX推進を行う中で得た知見とAIアルゴリズムを利用した
+                                ソフトウェアを開発し、提供しています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Vision & Mission Section */}
             <section className="vision-mission-section">
                 <div className="container">
@@ -199,53 +230,12 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Services Section */}
-            <section className="services-section">
-                <div className="container">
-                    <div className="section-header">
-                        <h2 className="section-title">事業紹介</h2>
-                        <p className="section-subtitle">
-                            ヒトの知見と業務をDeep Learningを用いてAI化し、デジタルでの事業開発を推進しています。
-                        </p>
-                    </div>
-                    <div className="services-grid">
-                        <div className="service-card">
-                            <div className="service-icon">
-                                <i className="icon-dx-partner"></i>
-                            </div>
-                            <h3>DX Partner Service</h3>
-                            <h4>DXパートナーサービス</h4>
-                            <p>
-                                事業・業界を変えたいと立ち上がった人とともに、AI専門家集団がプロジェクトを通じて、
-                                さまざまな業界のDX推進をお手伝いします。
-                            </p>
-                            <Link to="/services/dx-partner" className="service-link">
-                                詳しく見る →
-                            </Link>
-                        </div>
-                        <div className="service-card">
-                            <div className="service-icon">
-                                <i className="icon-ai-software"></i>
-                            </div>
-                            <h3>AI Software Service</h3>
-                            <h4>AIソフトウェアサービス</h4>
-                            <p>
-                                さまざまな業種のパートナーとDX推進を行う中で得た知見とAIアルゴリズムを利用した
-                                ソフトウェアを開発し、提供しています。
-                            </p>
-                            <Link to="/services/ai-software" className="service-link">
-                                詳しく見る →
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {/* Projects Section */}
             <section className="projects-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2 className="section-title">実績</h2>
+                        <h2 className="section-title-en">Projects</h2>
+                        <span className="section-title-jp">実績</span>
                         <p className="section-subtitle">
                             AIアルゴリズムを軸にDXを推進、支援してきたパートナーとの実績を紹介します。
                         </p>
@@ -307,7 +297,8 @@ const Home = () => {
             <section className="clients-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2 className="section-title">クライアント企業</h2>
+                        <h2 className="section-title-en">Our Clients</h2>
+                        <span className="section-title-jp">クライアント企業</span>
                         <p className="section-subtitle">
                             ACESと共に歩んできた企業を紹介します。
                         </p>
@@ -373,7 +364,8 @@ const Home = () => {
             <section className="technologies-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2 className="section-title">技術</h2>
+                        <h2 className="section-title-en">Technologies</h2>
+                        <span className="section-title-jp">技術</span>
                         <p className="section-subtitle">
                             最先端アルゴリズムを独自モジュール化し、提供しています。
                         </p>

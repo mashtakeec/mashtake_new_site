@@ -3,16 +3,25 @@
    ======================================== */
 
 .home {
-    padding-top: 80px;
+    /*padding-top: 80px;*/
 }
 
 /* Main Visual Section - ACES Style */
 .main-visual {
     height: 941px;
     width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: normal;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: normal;
+       -moz-box-align: normal;
+        -ms-flex-align: normal;
+            align-items: normal;
     position: relative;
     overflow: hidden;
     background: transparent;
@@ -22,10 +31,24 @@
     position: relative;
     z-index: 2;
     text-align: justify;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100%;
     width: 100%;
     max-width: 800px;
@@ -44,9 +67,18 @@
 }
 
 .desc-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: 40px;
     gap: 20px;
 }
@@ -56,6 +88,8 @@
     font-size: 18px;
     font-weight: 400;
     cursor: pointer;
+    -webkit-transition: color 0.5s ease;
+    -o-transition: color 0.5s ease;
     transition: color 0.5s ease;
 }
 
@@ -64,6 +98,8 @@
     font-size: 18px;
     font-weight: 400;
     cursor: pointer;
+    -webkit-transition: color 0.5s ease;
+    -o-transition: color 0.5s ease;
     transition: color 0.5s ease;
 }
 
@@ -80,6 +116,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+    background: -o-linear-gradient(315deg, #f8f9fa 0%, #e9ecef 100%);
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -89,7 +126,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 /* Responsive Design for Main Visual */
@@ -151,7 +189,7 @@
 }
 
 .section-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 60px;
 }
 
@@ -167,7 +205,7 @@
     color: #666;
     line-height: 1.6;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 15px 0;
 }
 
 .section-description {
@@ -191,7 +229,8 @@
     background: white;
     padding: 3rem;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -225,64 +264,73 @@
 }
 
 .service-card {
-    background: #f8f9fa;
     padding: 3rem;
     border-radius: 12px;
+    text-align: left;
+    -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+    transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+    -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+/* DX Partner Card - Dark Theme */
+.dx-partner-card {
+    background: -o-linear-gradient(315deg, #4a5568 0%, #2d3748 100%);
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+    color: white;
 }
 
-.service-icon {
-    width: 60px;
-    height: 60px;
-    background: #007bff;
-    border-radius: 50%;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.service-card h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 0.5rem;
-}
-
-.service-card h4 {
+.dx-partner-card h3 {
     font-size: 1.1rem;
-    font-weight: 500;
-    color: #666;
+    font-weight: 400;
+    color: #a0aec0;
     margin-bottom: 1rem;
 }
 
-.service-card p {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.6;
+.dx-partner-card h4 {
+    font-size: 48px;
+    font-weight: 300;
+    color: white;
     margin-bottom: 1.5rem;
+    line-height: 1.1;
 }
 
-.service-link {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+.dx-partner-card p {
+    color: #e2e8f0;
 }
 
-.service-link:hover {
-    color: #0056b3;
+/* AI Software Card - Light Theme */
+.ai-software-card {
+    background: #f7fafc;
+    color: #1a202c;
 }
 
-/* Projects Section */
+.ai-software-card h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #1a202c;
+    margin-bottom: 1rem;
+}
+
+.ai-software-card h4 {
+    font-size: 48px;
+    font-weight: 300;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.ai-software-card p {
+    color: #4a5568;
+}
+
+/* Service card base styles handled by specific card classes above */
+
+/* Projects Section - Dark Theme */
 .projects-section {
     padding: 80px 0;
-    background: #f8f9fa;
+    background: #1a202c;
 }
 
 .projects-grid {
@@ -294,16 +342,24 @@
 }
 
 .project-card {
-    background: white;
+    background: #2d3748;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+    transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+    -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
+    -webkit-box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
 .project-image {
@@ -314,7 +370,8 @@
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .project-content {
@@ -324,33 +381,35 @@
 .project-content h3 {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #f7fafc;
     margin-bottom: 0.5rem;
 }
 
 .project-content h4 {
     font-size: 1rem;
     font-weight: 500;
-    color: #666;
+    color: #cbd5e0;
     margin-bottom: 1rem;
 }
 
 .project-content p {
     font-size: 0.9rem;
-    color: #666;
+    color: #a0aec0;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
 
 .project-link {
-    color: #007bff;
+    color: #63b3ed;
     text-decoration: none;
     font-weight: 500;
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
     transition: color 0.3s ease;
 }
 
 .project-link:hover {
-    color: #0056b3;
+    color: #3182ce;
 }
 
 .projects-more {
@@ -370,33 +429,58 @@
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    align-items: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .client-logo {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 1rem;
     background: #f8f9fa;
     border-radius: 8px;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
     transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .client-logo:hover {
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
 
 .client-logo img {
     max-width: 120px;
     max-height: 60px;
-    object-fit: contain;
-    filter: grayscale(100%);
+    -o-object-fit: contain;
+       object-fit: contain;
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+    -webkit-transition: -webkit-filter 0.3s ease;
+    transition: -webkit-filter 0.3s ease;
+    -o-transition: filter 0.3s ease;
     transition: filter 0.3s ease;
+    transition: filter 0.3s ease, -webkit-filter 0.3s ease;
 }
 
 .client-logo:hover img {
-    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
 }
 
 .clients-more {
@@ -425,13 +509,21 @@
     background: white;
     padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+    transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+    -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 .technology-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
+    -webkit-box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .technology-number {
@@ -476,7 +568,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -496,9 +591,13 @@
 }
 
 .cta-buttons {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .cta-image {
@@ -509,7 +608,8 @@
 .cta-image img {
     width: 100%;
     height: 300px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 /* Bottom CTA */
@@ -532,15 +632,29 @@
     border-radius: 12px;
     overflow: hidden;
     min-height: 300px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+    transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+    -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 .cta-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
+    -webkit-box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .cta-card-content {
@@ -573,11 +687,13 @@
 }
 
 .downloads-bg {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: -o-linear-gradient(315deg, #6b7280 0%, #4b5563 100%);
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
 }
 
 .contact-bg {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: -o-linear-gradient(315deg, #9ca3af 0%, #6b7280 100%);
+    background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
 }
 
 /* Buttons */
@@ -587,6 +703,8 @@
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
     border: 2px solid transparent;
     cursor: pointer;
@@ -599,7 +717,9 @@
 
 .btn-primary:hover {
     background: #0056b3;
-    transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
+        -ms-transform: translateY(-2px);
+            transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -611,7 +731,9 @@
 .btn-secondary:hover {
     background: #007bff;
     color: white;
-    transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
+        -ms-transform: translateY(-2px);
+            transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -623,7 +745,9 @@
 .btn-outline:hover {
     background: white;
     color: #1a1a1a;
-    transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
+        -ms-transform: translateY(-2px);
+            transform: translateY(-2px);
 }
 
 /* Container */
@@ -643,6 +767,11 @@
         gap: 2rem;
     }
     
+    .dx-partner-card h4,
+    .ai-software-card h4 {
+        font-size: 28px;
+    }
+    
     .projects-grid {
         grid-template-columns: 1fr;
     }
@@ -660,7 +789,10 @@
     }
     
     .cta-buttons {
-        justify-content: center;
+        -webkit-box-pack: center;
+           -moz-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 }
 
