@@ -185,9 +185,9 @@ const Home = () => {
                     <div className="section-header">
                         <h2 className="section-title-en">Services</h2>
                         <span className="section-title-jp">事業紹介</span>
-                        <p className="section-subtitle">
+                        <h4 className="section-subtitle">
                             ヒトの知見と業務をDeep Learningを用いてAI化し、デジタルでの事業開発を推進しています。
-                        </p>
+                        </h4>
                     </div>
                     <div className="services-grid">
                         <div className="service-card dx-partner-card">
@@ -231,59 +231,101 @@ const Home = () => {
 
             {/* Projects Section */}
             <section className="projects-section">
+                {/* Header section with 2-column layout */}
                 <div className="container">
-                    <div className="section-header">
-                        <h2 className="section-title-en">Projects</h2>
-                        <span className="section-title-jp">実績</span>
-                        <p className="section-subtitle">
-                            AIアルゴリズムを軸にDXを推進、支援してきたパートナーとの実績を紹介します。
-                        </p>
-                        <p className="section-description">
-                            保険、金融、小売、介護、人材、建設、スポーツなど、事業・業界を変えたいと立ち上がった
-                            パートナーのみなさまと併走して、数多くのDXプロジェクトを推進しています。
-                        </p>
+                    <div className="projects-header">
+                        <div className="projects-header-left">
+                            <h2 className="section-title-en">Projects</h2>
+                            <span className="section-title-jp">実績</span>
+                        </div>
+                        <div className="projects-header-right">
+                            <h4 className="section-subtitle">
+                                AIアルゴリズムを軸にDXを推進、支援してきたパートナーとの実績を紹介します。
+                            </h4>
+                            <p className="section-description">
+                                保険、金融、小売、介護、人材、建設、スポーツなど、事業・業界を変えたいと立ち上がった
+                                パートナーのみなさまと併走して、数多くのDXプロジェクトを推進しています。
+                            </p>
+                        </div>
                     </div>
-                    <div className="projects-grid">
-                        <div className="project-card">
-                            <div className="project-image">
-                                <img src="/resources/images/j-power02-20220622-181632-20220622-181632.png" alt="J-POWER" />
+                </div>
+
+                {/* Featured project - full width */}
+                <div className="featured-project">
+                    <div className="featured-project-image">
+                        <img src="/resources/images/j-power02-20220622-181632-20220622-181632.png" alt="大規模モデルを体験し、考える" />
+                        <div className="featured-project-overlay">
+                            <div className="featured-project-content">
+                                <h3 className="featured-project-title">大規模モデルを体験し、考える、<br />ワークショップ型プロジェクト</h3>
+                                <p className="featured-project-description">
+                                    AIエキスパートによる大規模モデル勉強・体験会と<br />
+                                    ワークショップがセットになった<br />
+                                    "活用指針検討プロジェクト"の提供を開始
+                                </p>
                             </div>
-                            <div className="project-content">
-                                <h3>J-POWER</h3>
-                                <h4>ヒトの行動特定労災リスクをAIで軽減</h4>
-                                <p>危険予知高度化と安全管理システム構築を目指す電源開発とACESの取り組みとは</p>
-                                <Link to="/projects/j-power" className="project-link">
-                                    実績を見る
-                                </Link>
+                            <div className="featured-project-tag">
+                                ChatGPT/生成AIのビジネス活用推進プログラムを提供開始しました
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                {/* Project cards slider */}
+                <div className="container">
+                    <div className="projects-slider">
                         <div className="project-card">
-                            <div className="project-image">
+                            <div className="project-card-image">
                                 <img src="/resources/images/namco.png" alt="バンダイナムコ研究所" />
                             </div>
-                            <div className="project-content">
-                                <h3>株式会社バンダイナムコ研究所</h3>
-                                <h4>モーションキャプチャ</h4>
-                                <p>モーションAI技術の研究開発に活用可能なモーションデータセットを販売します</p>
-                                <Link to="/projects/namco" className="project-link">
-                                    実績を見る
-                                </Link>
+                            <div className="project-card-content">
+                                <p className="project-card-description">
+                                    モーションAI技術の研究開発に活用可能な<br />
+                                    モーションデータセットを販売します
+                                </p>
+                                <div className="project-card-logos">
+                                    <img src="/resources/images/aces-animation-logo.png" alt="ACES" className="aces-logo" />
+                                    <img src="/resources/images/namco.png" alt="Bandai Namco Research" className="partner-logo" />
+                                </div>
                             </div>
                         </div>
+                        
                         <div className="project-card">
-                            <div className="project-image">
+                            <div className="project-card-image">
                                 <img src="/resources/images/aces-animation-logo.png" alt="ACES ChatHub" />
                             </div>
-                            <div className="project-content">
-                                <h3>ACES ChatHub</h3>
-                                <h4>大規模モデルChatGPTをセキュアに利活用</h4>
-                                <p>できる法人向けチャットボットAIプラットフォーム「ACES ChatHub」を提供開始しました</p>
-                                <Link to="/projects/chat-hub" className="project-link">
-                                    実績を見る
-                                </Link>
+                            <div className="project-card-content">
+                                <p className="project-card-description">
+                                    ACES、ChatGPTをセキュアに利活用できる<br />
+                                    法人向けチャットボットAIプラットフォーム<br />
+                                    「ACES ChatHub」を提供開始
+                                </p>
+                                <div className="project-card-logos">
+                                    <img src="/resources/images/aces-animation-logo.png" alt="ACES" className="aces-logo" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="project-card">
+                            <div className="project-card-image">
+                                <img src="/resources/images/j-power02-20220622-181632-20220622-181632.png" alt="大規模モデル体験" />
+                            </div>
+                            <div className="project-card-content">
+                                <p className="project-card-description">
+                                    大規模モデルを体験し、考える、<br />
+                                    ワークショップ型プロジェクト
+                                </p>
+                                <div className="project-card-subtitle">
+                                    AIエキスパートによる大規模モデル勉強・体験会と<br />
+                                    ワークショップがセットになった<br />
+                                    "活用指針検討プロジェクト"の提供を開始
+                                </div>
+                                <div className="project-card-logos">
+                                    <img src="/resources/images/aces-animation-logo.png" alt="ACES" className="aces-logo" />
+                                </div>
                             </div>
                         </div>
                     </div>
+                    
                     <div className="projects-more">
                         <Link to="/projects" className="btn btn-outline">
                             すべての実績を見る
