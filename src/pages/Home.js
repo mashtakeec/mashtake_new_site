@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import lottie from 'lottie-web';
 import WhoWeAre from '../components/WhoWeAre';
@@ -14,6 +14,48 @@ const Home = () => {
     const scrambleRef3 = useRef(null);
     const scrambleRef4 = useRef(null);
     const motionBgRef = useRef(null);
+    const navigate = useNavigate();
+
+    // Projects data
+    const projectsData = [
+        {
+            id: 'workshop',
+            title: '大規模モデルを体験し、考える、\nワークショップ型プロジェクト',
+            description: 'AIエキスパートによる大規模モデル勉強・体験会と\nワークショップがセットになった\n"活用指針検討プロジェクト"の提供を開始',
+            tag: 'ChatGPT/生成AIのビジネス活用推進プログラムを提供開始しました',
+            image: '/resources/images/j-power02-20220622-181632-20220622-181632.png',
+            link: '/projects/workshop'
+        },
+        {
+            id: 'namco',
+            title: 'モーションAI技術の研究開発に活用可能な\nモーションデータセットを販売します',
+            description: 'バンダイナムコ研究所と共同で開発した\n高品質なモーションデータセットを\n研究開発用途で提供開始',
+            tag: 'バンダイナムコ研究所との共同プロジェクト',
+            image: '/resources/images/namco.png',
+            link: '/projects/namco'
+        },
+        {
+            id: 'chathub',
+            title: 'ACES、ChatGPTをセキュアに利活用できる\n法人向けチャットボットAIプラットフォーム',
+            description: 'セキュリティとプライバシーを重視した\n企業向けChatGPTプラットフォーム\n「ACES ChatHub」の提供を開始',
+            tag: '法人向けセキュアAIプラットフォーム',
+            image: '/resources/images/aces-animation-logo.png',
+            link: '/projects/chat-hub'
+        }
+    ];
+
+    // Featured project state
+    const [featuredProject, setFeaturedProject] = useState(projectsData[0]);
+
+    // Handle project card click
+    const handleProjectClick = (project) => {
+        setFeaturedProject(project);
+    };
+
+    // Handle featured project click
+    const handleFeaturedClick = () => {
+        navigate(featuredProject.link);
+    };
 
     useEffect(() => {
         // スクランブルテキストエフェクト
@@ -251,20 +293,30 @@ const Home = () => {
                 </div>
 
                 {/* Featured project - full width */}
-                <div className="featured-project">
+                <div className="featured-project" onClick={handleFeaturedClick}>
                     <div className="featured-project-image">
-                        <img src="/resources/images/j-power02-20220622-181632-20220622-181632.png" alt="大規模モデルを体験し、考える" />
+                        <img src={featuredProject.image} alt={featuredProject.title} />
                         <div className="featured-project-overlay">
                             <div className="featured-project-content">
-                                <h3 className="featured-project-title">大規模モデルを体験し、考える、<br />ワークショップ型プロジェクト</h3>
+                                <h3 className="featured-project-title">
+                                    {featuredProject.title.split('\n').map((line, index) => (
+                                        <React.Fragment key={index}>
+                                            {line}
+                                            {index < featuredProject.title.split('\n').length - 1 && <br />}
+                                        </React.Fragment>
+                                    ))}
+                                </h3>
                                 <p className="featured-project-description">
-                                    AIエキスパートによる大規模モデル勉強・体験会と<br />
-                                    ワークショップがセットになった<br />
-                                    "活用指針検討プロジェクト"の提供を開始
+                                    {featuredProject.description.split('\n').map((line, index) => (
+                                        <React.Fragment key={index}>
+                                            {line}
+                                            {index < featuredProject.description.split('\n').length - 1 && <br />}
+                                        </React.Fragment>
+                                    ))}
                                 </p>
                             </div>
                             <div className="featured-project-tag">
-                                ChatGPT/生成AIのビジネス活用推進プログラムを提供開始しました
+                                {featuredProject.tag}
                             </div>
                         </div>
                     </div>
@@ -273,57 +325,43 @@ const Home = () => {
                 {/* Project cards slider */}
                 <div className="container">
                     <div className="projects-slider">
-                        <div className="project-card">
-                            <div className="project-card-image">
-                                <img src="/resources/images/namco.png" alt="バンダイナムコ研究所" />
-                            </div>
-                            <div className="project-card-content">
-                                <p className="project-card-description">
-                                    モーションAI技術の研究開発に活用可能な<br />
-                                    モーションデータセットを販売します
-                                </p>
-                                <div className="project-card-logos">
-                                    <img src="/resources/images/aces-animation-logo.png" alt="ACES" className="aces-logo" />
-                                    <img src="/resources/images/namco.png" alt="Bandai Namco Research" className="partner-logo" />
+                        {projectsData.map((project, index) => (
+                            <div 
+                                key={project.id} 
+                                className={`project-card ${featuredProject.id === project.id ? 'active' : ''}`}
+                                onClick={() => handleProjectClick(project)}
+                            >
+                                <div className="project-card-image">
+                                    <img src={project.image} alt={project.title} />
+                                </div>
+                                <div className="project-card-content">
+                                    <p className="project-card-description">
+                                        {project.title.split('\n').map((line, lineIndex) => (
+                                            <React.Fragment key={lineIndex}>
+                                                {line}
+                                                {lineIndex < project.title.split('\n').length - 1 && <br />}
+                                            </React.Fragment>
+                                        ))}
+                                    </p>
+                                    {project.description && (
+                                        <div className="project-card-subtitle">
+                                            {project.description.split('\n').map((line, lineIndex) => (
+                                                <React.Fragment key={lineIndex}>
+                                                    {line}
+                                                    {lineIndex < project.description.split('\n').length - 1 && <br />}
+                                                </React.Fragment>
+                                            ))}
+                                        </div>
+                                    )}
+                                    <div className="project-card-logos">
+                                        <img src="/resources/images/aces-animation-logo.png" alt="ACES" className="aces-logo" />
+                                        {project.id === 'namco' && (
+                                            <img src="/resources/images/namco.png" alt="Bandai Namco Research" className="partner-logo" />
+                                        )}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div className="project-card">
-                            <div className="project-card-image">
-                                <img src="/resources/images/aces-animation-logo.png" alt="ACES ChatHub" />
-                            </div>
-                            <div className="project-card-content">
-                                <p className="project-card-description">
-                                    ACES、ChatGPTをセキュアに利活用できる<br />
-                                    法人向けチャットボットAIプラットフォーム<br />
-                                    「ACES ChatHub」を提供開始
-                                </p>
-                                <div className="project-card-logos">
-                                    <img src="/resources/images/aces-animation-logo.png" alt="ACES" className="aces-logo" />
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div className="project-card">
-                            <div className="project-card-image">
-                                <img src="/resources/images/j-power02-20220622-181632-20220622-181632.png" alt="大規模モデル体験" />
-                            </div>
-                            <div className="project-card-content">
-                                <p className="project-card-description">
-                                    大規模モデルを体験し、考える、<br />
-                                    ワークショップ型プロジェクト
-                                </p>
-                                <div className="project-card-subtitle">
-                                    AIエキスパートによる大規模モデル勉強・体験会と<br />
-                                    ワークショップがセットになった<br />
-                                    "活用指針検討プロジェクト"の提供を開始
-                                </div>
-                                <div className="project-card-logos">
-                                    <img src="/resources/images/aces-animation-logo.png" alt="ACES" className="aces-logo" />
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                     
                     <div className="projects-more">
