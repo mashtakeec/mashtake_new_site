@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import lottie from 'lottie-web';
-import '../styles/Home.css';
 import WhoWeAre from '../components/WhoWeAre';
 import Technologies from '../components/Technologies';
 import News from '../components/News';

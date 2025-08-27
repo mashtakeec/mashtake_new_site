@@ -9,7 +9,6 @@ import Projects from './pages/Projects';
 import Technologies from './pages/Technologies';
 import News from './pages/News';
 import Contact from './pages/Contact';
-import './styles/App.css';
 import './styles/main.css';
 
 function App() {
