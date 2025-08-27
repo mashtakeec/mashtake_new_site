@@ -265,13 +265,27 @@
 
 .service-card {
     padding: 3rem;
-    border-radius: 12px;
     text-align: left;
     -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
     transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
     -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+       -moz-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    min-height: 350px;
 }
 
 /* DX Partner Card - Dark Theme */
@@ -279,6 +293,20 @@
     background: -o-linear-gradient(315deg, #4a5568 0%, #2d3748 100%);
     background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
     color: white;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+       -moz-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
 }
 
 .dx-partner-card h3 {
@@ -304,6 +332,20 @@
 .ai-software-card {
     background: #f7fafc;
     color: #1a202c;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+       -moz-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
 }
 
 .ai-software-card h3 {
@@ -314,7 +356,7 @@
 }
 
 .ai-software-card h4 {
-    font-size: 48px;
+    font-size: 46px;
     font-weight: 300;
     color: #1a202c;
     margin-bottom: 1.5rem;
@@ -323,6 +365,13 @@
 
 .ai-software-card p {
     color: #4a5568;
+}
+
+/* Remove margin-bottom from last p element in service cards */
+.service-card p:last-child,
+.dx-partner-card p:last-child,
+.ai-software-card p:last-child {
+    margin-bottom: 0;
 }
 
 /* Service card base styles handled by specific card classes above */
