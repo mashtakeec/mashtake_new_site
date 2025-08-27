@@ -14,6 +14,7 @@ const Home = () => {
     const scrambleRef3 = useRef(null);
     const scrambleRef4 = useRef(null);
     const motionBgRef = useRef(null);
+    const sliderRef = useRef(null);
     const navigate = useNavigate();
 
     // Projects data
@@ -58,6 +59,51 @@ const Home = () => {
     };
 
     useEffect(() => {
+        // Slider drag functionality
+        const slider = sliderRef.current;
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        if (slider) {
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+
+            // Touch events for mobile
+            slider.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('touchmove', (e) => {
+                const x = e.touches[0].pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        }
+
         // スクランブルテキストエフェクト
         const scrambleText = (element, finalText, duration = 2) => {
             const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
@@ -299,12 +345,7 @@ const Home = () => {
                         <div className="featured-project-overlay">
                             <div className="featured-project-content">
                                 <h3 className="featured-project-title">
-                                    {featuredProject.title.split('\n').map((line, index) => (
-                                        <React.Fragment key={index}>
-                                            {line}
-                                            {index < featuredProject.title.split('\n').length - 1 && <br />}
-                                        </React.Fragment>
-                                    ))}
+                                    {featuredProject.title.replace(/\n/g, ' ')}
                                 </h3>
                                 <p className="featured-project-description">
                                     {featuredProject.description.split('\n').map((line, index) => (
@@ -323,8 +364,8 @@ const Home = () => {
                 </div>
 
                 {/* Project cards slider */}
-                <div className="container">
-                    <div className="projects-slider">
+                <div className="projects-slider-wrapper">
+                    <div className="projects-slider" ref={sliderRef}>
                         {projectsData.map((project, index) => (
                             <div 
                                 key={project.id} 
@@ -363,7 +404,9 @@ const Home = () => {
                             </div>
                         ))}
                     </div>
+                </div>
                     
+                <div className="container">
                     <div className="projects-more">
                         <Link to="/projects" className="btn btn-outline">
                             すべての実績を見る
