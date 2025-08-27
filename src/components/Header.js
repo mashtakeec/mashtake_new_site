@@ -51,7 +51,6 @@ const Header = () => {
                                     className={`nav-button ${isActive('/about') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    <span className="nav-number">2</span>
                                     <span className="nav-text">私たちについて</span>
                                 </Link>
                             </li>
@@ -61,7 +60,6 @@ const Header = () => {
                                     className={`nav-button ${isActive('/services') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    <span className="nav-number">3</span>
                                     <span className="nav-text">事業紹介</span>
                                 </Link>
                                 <ul className="dropdown-menu">
@@ -83,7 +81,6 @@ const Header = () => {
                                     className={`nav-button ${isActive('/projects') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    <span className="nav-number">4</span>
                                     <span className="nav-text">実績</span>
                                 </Link>
                             </li>
@@ -93,7 +90,6 @@ const Header = () => {
                                     className={`nav-button ${isActive('/technologies') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    <span className="nav-number">5</span>
                                     <span className="nav-text">技術</span>
                                 </Link>
                             </li>
@@ -103,7 +99,6 @@ const Header = () => {
                                     className={`nav-button ${isActive('/careers') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    <span className="nav-number">6</span>
                                     <span className="nav-text">採用情報</span>
                                 </Link>
                             </li>
@@ -113,7 +108,6 @@ const Header = () => {
                                     className={`nav-button ${isActive('/news') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    <span className="nav-number">7</span>
                                     <span className="nav-text">ニュース</span>
                                 </Link>
                             </li>
@@ -123,7 +117,6 @@ const Header = () => {
                                     className={`nav-button ${isActive('/company') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    <span className="nav-number">8</span>
                                     <span className="nav-text">会社案内</span>
                                 </Link>
                                 <ul className="dropdown-menu">
@@ -155,7 +148,6 @@ const Header = () => {
                                     className={`nav-button ${isActive('/contact') ? 'active' : ''}`}
                                     onClick={closeMobileMenu}
                                 >
-                                    <span className="nav-number">9</span>
                                     <span className="nav-text">お問い合わせ</span>
                                 </Link>
                             </li>
