@@ -9,10 +9,6 @@ import Careers from '../components/Careers';
 import FinalSections from '../components/FinalSections';
 
 const Home = () => {
-    const scrambleRef1 = useRef(null);
-    const scrambleRef2 = useRef(null);
-    const scrambleRef3 = useRef(null);
-    const scrambleRef4 = useRef(null);
     const motionBgRef = useRef(null);
     const sliderRef = useRef(null);
     const navigate = useNavigate();
@@ -104,42 +100,7 @@ const Home = () => {
             });
         }
 
-        // スクランブルテキストエフェクト
-        const scrambleText = (element, finalText, duration = 2) => {
-            const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-            let frame = 0;
-            const frameRate = 30;
-            const totalFrames = duration * frameRate;
-            
-            const animate = () => {
-                let scrambledText = '';
-                for (let i = 0; i < finalText.length; i++) {
-                    if (frame / totalFrames > i / finalText.length) {
-                        scrambledText += finalText[i];
-                    } else {
-                        scrambledText += chars[Math.floor(Math.random() * chars.length)];
-                    }
-                }
-                element.textContent = scrambledText;
-                
-                if (frame < totalFrames) {
-                    frame++;
-                    requestAnimationFrame(animate);
-                } else {
-                    element.textContent = finalText;
-                }
-            };
-            
-            animate();
-        };
-
-        // アニメーション開始
-        const startAnimations = () => {
-            setTimeout(() => scrambleText(scrambleRef1.current, 'アルゴリズムで、', 1.5), 500);
-            setTimeout(() => scrambleText(scrambleRef2.current, '人の働き方に余白をつくる。', 2), 1000);
-            setTimeout(() => scrambleText(scrambleRef3.current, 'Vision', 1), 2000);
-            setTimeout(() => scrambleText(scrambleRef4.current, 'Mission', 1), 2200);
-        };
+        // Scramble animation removed - using static text instead
 
         // Lottie背景アニメーション（SVGデータを模擬）
         const createBackgroundAnimation = () => {
@@ -189,42 +150,7 @@ const Home = () => {
             }
         };
 
-        startAnimations();
         createBackgroundAnimation();
-
-        // Vision/Mission タブ切り替え
-        const handleTabSwitch = () => {
-            const visionTab = scrambleRef3.current;
-            const missionTab = scrambleRef4.current;
-
-            if (visionTab && missionTab) {
-                visionTab.style.color = '#e9e9e9';
-                missionTab.style.color = '#4b4b4b';
-
-                const switchToMission = () => {
-                    gsap.to(visionTab, { color: '#4b4b4b', duration: 0.5 });
-                    gsap.to(missionTab, { color: '#e9e9e9', duration: 0.5 });
-                };
-
-                const switchToVision = () => {
-                    gsap.to(visionTab, { color: '#e9e9e9', duration: 0.5 });
-                    gsap.to(missionTab, { color: '#4b4b4b', duration: 0.5 });
-                };
-
-                // 5秒ごとに切り替え
-                let isVision = true;
-                setInterval(() => {
-                    if (isVision) {
-                        switchToMission();
-                    } else {
-                        switchToVision();
-                    }
-                    isVision = !isVision;
-                }, 5000);
-            }
-        };
-
-        setTimeout(handleTabSwitch, 3000);
 
         // Scroll suave para enlaces internos
         const handleSmoothScroll = (e) => {
@@ -248,15 +174,15 @@ const Home = () => {
 
     return (
         <div className="home">
-            {/* Hero Section - ACES Style */}
+            {/* Hero Section - MASHTAKE Style */}
             <section className="main-visual">
                 <div className="text-container">
-                    <p ref={scrambleRef1} className="copy-text"></p>
-                    <p ref={scrambleRef2} className="copy-text"></p>
-                    <div className="desc-container">
-                        <span ref={scrambleRef3} className="text-vision"></span>
-                        <span className="line"></span>
-                        <span ref={scrambleRef4} className="text-mission"></span>
+                    <h1 className="hero-main-catch">Be what's possible.</h1>
+                    <p className="hero-sub-catch">常識を超えた先に、答えがある。</p>
+                    <div className="hero-vision-mission">
+                        <span className="vision-text">Vision</span>
+                        <span className="divider-line"></span>
+                        <span className="mission-text">Mission</span>
                     </div>
                 </div>
                 <div ref={motionBgRef} className="motionbg">

@@ -655,30 +655,68 @@ a:hover {
 .text-container {
     position: relative;
     z-index: 2;
-    text-align: justify;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
+    text-align: center;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-       -moz-box-orient: vertical;
-       -moz-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-       -moz-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-       -moz-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    gap: 2rem;
+}
+
+/* New Hero Styles */
+.hero-main-catch {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 0;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: -0.02em;
+}
+
+.hero-sub-catch {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.05em;
+}
+
+/* Hero Vision/Mission */
+.hero-vision-mission {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.vision-text,
+.mission-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.vision-text:hover,
+.mission-text:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.divider-line {
+    width: 50px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .copy-text {
@@ -3648,6 +3686,28 @@ a:hover {
         padding: 0 20px;
     }
 
+    .hero-main-catch {
+        font-size: 3rem;
+    }
+
+    .hero-sub-catch {
+        font-size: 1.3rem;
+    }
+
+    .hero-vision-mission {
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .vision-text,
+    .mission-text {
+        font-size: 1rem;
+    }
+
+    .divider-line {
+        width: 30px;
+    }
+
     .copy-text {
         font-size: 28px;
     }
@@ -3824,6 +3884,29 @@ a:hover {
     /* Hero Mobile */
     .main-visual {
         height: 60vh;
+    }
+
+    .hero-main-catch {
+        font-size: 2.5rem;
+    }
+
+    .hero-sub-catch {
+        font-size: 1.1rem;
+    }
+
+    .hero-vision-mission {
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .vision-text,
+    .mission-text {
+        font-size: 0.9rem;
+    }
+
+    .divider-line {
+        width: 25px;
     }
 
     .copy-text {
