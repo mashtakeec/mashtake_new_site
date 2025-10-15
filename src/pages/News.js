@@ -1,19 +1,52 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { gsap } from 'gsap';
 
 const News = () => {
+  const heroRef = useRef(null);
+  const contentRef = useRef(null);
+  const newsListRef = useRef(null);
+
+  useEffect(() => {
+    // Hero animation
+    gsap.fromTo(heroRef.current, 
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+    );
+
+    // Content animation
+    gsap.fromTo(contentRef.current,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, delay: 0.3, ease: "power2.out" }
+    );
+
+    // News articles animation
+    gsap.fromTo(newsListRef.current.children,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.5, ease: "power2.out" }
+    );
+  }, []);
+
   return (
     <div className="news-page">
-      <section className="page-hero">
-        <h1>ニュース</h1>
-        <p>Latest News</p>
+      <section className="news-hero" ref={heroRef}>
+        <div className="container">
+          <div className="hero-content">
+            <h1 className="hero-title">ニュース</h1>
+            <p className="hero-subtitle">Latest News</p>
+            <div className="hero-description">
+              <p>MASHTAKEの最新情報をお届けします。</p>
+              <p>新サービスのリリース、業界動向、イベント参加情報などをご覧いただけます。</p>
+            </div>
+          </div>
+        </div>
       </section>
       
       <section className="news-content">
-        <div className="section-inner">
+        <div className="container" ref={contentRef}>
           <h2>最新ニュース</h2>
           <p>
-            ACESの最新情報をお届けします。新サービスのリリース、
+            MASHTAKEの最新情報をお届けします。新サービスのリリース、
             業界動向、イベント参加情報などをご覧いただけます。
           </p>
           
@@ -25,47 +58,53 @@ const News = () => {
             <button className="filter-btn">メディア掲載</button>
           </div>
           
-          <div className="news-list">
+          <div className="news-list" ref={newsListRef}>
             <article className="news-article featured">
-              <time className="news-date">2024.08.25</time>
-              <div className="news-category press">プレスリリース</div>
-              <h3>新AI画像解析サービス「ACES Vision Pro」をリリース</h3>
-              <p>
-                製造業向けの次世代AI画像解析サービス「ACES Vision Pro」の提供を開始いたします。
-                従来比50%の精度向上を実現し、リアルタイム品質検査が可能になりました。
-              </p>
-              <div className="news-tags">
-                <span className="tag">AI</span>
-                <span className="tag">画像解析</span>
-                <span className="tag">製造業</span>
+              <div className="featured-content">
+                <time className="news-date">2024.08.25</time>
+                <div className="news-category press">プレスリリース</div>
+                <h3>AI研修プログラム「MASHTAKE AI Academy」を開始</h3>
+                <p>
+                  企業向けAI研修プログラム「MASHTAKE AI Academy」の提供を開始いたしました。
+                  実務に直結するAIスキルを短期間で習得できるカリキュラムを提供します。
+                  中小企業から大企業まで、幅広い規模の企業様にご利用いただけるプログラムとなっております。
+                </p>
+                <div className="news-tags">
+                  <span className="tag">AI研修</span>
+                  <span className="tag">教育</span>
+                  <span className="tag">スキルアップ</span>
+                </div>
+              </div>
+              <div className="featured-image">
+                <img src="/resources/images/services/ai-training.svg" alt="MASHTAKE AI Academy" />
               </div>
             </article>
             
             <article className="news-article">
               <time className="news-date">2024.08.20</time>
               <div className="news-category event">イベント</div>
-              <h3>AI EXPO 2024に出展決定</h3>
+              <h3>Digital Marketing EXPO 2024に出展決定</h3>
               <p>
-                9月15日-17日に開催されるAI EXPO 2024への出展が決定いたしました。
-                最新のAIソリューションをデモンストレーションいたします。
+                10月15日-17日に開催されるDigital Marketing EXPO 2024への出展が決定いたしました。
+                AIとWEB技術を融合したデジタルマーケティングソリューションを展示いたします。
               </p>
               <div className="news-tags">
+                <span className="tag">デジタルマーケティング</span>
                 <span className="tag">展示会</span>
-                <span className="tag">デモ</span>
               </div>
             </article>
             
             <article className="news-article">
               <time className="news-date">2024.08.15</time>
               <div className="news-category media">メディア掲載</div>
-              <h3>日経新聞にCEOインタビューが掲載されました</h3>
+              <h3>日経新聞に代表取締役インタビューが掲載されました</h3>
               <p>
-                日本経済新聞の「AI企業の未来戦略」特集にて、弊社CEOのインタビュー記事が
-                掲載されました。AIの民主化についての取り組みをご紹介しています。
+                日本経済新聞の「中小企業のDX推進」特集にて、弊社代表取締役のインタビュー記事が
+                掲載されました。AIとWEB技術を活用した中小企業支援について語っています。
               </p>
               <div className="news-tags">
                 <span className="tag">インタビュー</span>
-                <span className="tag">日経新聞</span>
+                <span className="tag">DX推進</span>
               </div>
             </article>
             
@@ -82,25 +121,25 @@ const News = () => {
             <article className="news-article">
               <time className="news-date">2024.08.05</time>
               <div className="news-category press">プレスリリース</div>
-              <h3>大手小売チェーンとの業務提携について</h3>
+              <h3>大手製造業とのAIシステム開発業務提携を締結</h3>
               <p>
-                全国展開する大手小売チェーンA社との業務提携契約を締結いたします。
-                需要予測AIシステムの導入により、売上向上と在庫最適化を支援いたします。
+                大手製造業とのAIシステム開発に関する業務提携契約を締結いたしました。
+                生産性向上と品質管理の高度化を目指したカスタムAIソリューションを提供します。
               </p>
               <div className="news-tags">
                 <span className="tag">業務提携</span>
-                <span className="tag">小売</span>
-                <span className="tag">需要予測</span>
+                <span className="tag">製造業</span>
+                <span className="tag">AIシステム</span>
               </div>
             </article>
             
             <article className="news-article">
               <time className="news-date">2024.07.30</time>
               <div className="news-category event">イベント</div>
-              <h3>「AIビジネス活用セミナー」開催のお知らせ</h3>
+              <h3>「AIシステム開発セミナー」開催のお知らせ</h3>
               <p>
-                9月5日（木）にオンラインセミナー「中小企業のためのAIビジネス活用」を開催いたします。
-                参加費無料、先着100名様限定となっております。
+                11月10日（日）にオンラインセミナー「中小企業のためのAIシステム開発入門」を開催いたします。
+                参加費無料、先着150名様限定です。
               </p>
               <div className="news-tags">
                 <span className="tag">セミナー</span>
@@ -112,43 +151,43 @@ const News = () => {
             <article className="news-article">
               <time className="news-date">2024.07.25</time>
               <div className="news-category media">メディア掲載</div>
-              <h3>IT専門誌「Tech Innovation」に技術記事を寄稿</h3>
+              <h3>Web技術専門誌「Digital Trends」に技術記事を寄稿</h3>
               <p>
-                弊社のデータサイエンティストが「機械学習モデルの運用最適化」について
-                技術記事を寄稿いたしました。実践的なMLOpsの知見を紹介しています。
+                弊社のエンジニアが「AIとWeb技術の融合によるデジタルマーケティング革新」について
+                技術記事を寄稿いたしました。実践的なデジタルソリューションの知見を紹介しています。
               </p>
               <div className="news-tags">
                 <span className="tag">技術記事</span>
-                <span className="tag">MLOps</span>
+                <span className="tag">デジタルマーケティング</span>
               </div>
             </article>
             
             <article className="news-article">
               <time className="news-date">2024.07.20</time>
               <div className="news-category announcement">お知らせ</div>
-              <h3>新オフィス移転のお知らせ</h3>
+              <h3>新サービス「MASHTAKE AI Server」の提供開始</h3>
               <p>
-                業務拡大に伴い、8月1日より新オフィスへ移転いたします。
-                より快適な環境でお客様へのサービス向上に努めてまいります。
+                企業向け高性能AIサーバー「MASHTAKE AI Server」の提供を開始いたしました。
+                GPU搭載で高速AI処理を実現し、カスタム構成にも対応しています。
               </p>
               <div className="news-tags">
-                <span className="tag">移転</span>
-                <span className="tag">オフィス</span>
+                <span className="tag">AIサーバー</span>
+                <span className="tag">GPU</span>
               </div>
             </article>
             
             <article className="news-article">
               <time className="news-date">2024.07.15</time>
               <div className="news-category press">プレスリリース</div>
-              <h3>Series Bラウンドで10億円の資金調達を完了</h3>
+              <h3>ブロックチェーン関連サービスの提供開始</h3>
               <p>
-                成長加速のため、Series Bラウンドにて10億円の資金調達を完了いたしました。
-                R&D投資とエンジニア採用を強化し、事業拡大を目指します。
+                ブロックチェーン技術を活用したシステム開発サービスの提供を開始いたしました。
+                NFTプラットフォームやDApps開発など、次世代Webサービスを提供します。
               </p>
               <div className="news-tags">
-                <span className="tag">資金調達</span>
-                <span className="tag">Series B</span>
-                <span className="tag">採用</span>
+                <span className="tag">ブロックチェーン</span>
+                <span className="tag">NFT</span>
+                <span className="tag">DApps</span>
               </div>
             </article>
             
@@ -173,7 +212,7 @@ const News = () => {
       </section>
       
       <section className="newsletter-section">
-        <div className="section-inner">
+        <div className="container">
           <h2>ニュースレター登録</h2>
           <p>最新のニュースや技術情報をメールでお届けします</p>
           <div className="newsletter-form">
@@ -184,7 +223,7 @@ const News = () => {
       </section>
       
       <section className="cta-section">
-        <div className="section-inner">
+        <div className="container">
           <h2>お問い合わせ</h2>
           <p>取材・広報に関するお問い合わせは、こちらからご連絡ください。</p>
           <Link to="/contact" className="cta-button">お問い合わせ</Link>

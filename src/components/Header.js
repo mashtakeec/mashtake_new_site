@@ -34,11 +34,11 @@ const Header = () => {
                     {/* Logo */}
                     <Link to="/" className="logo" onClick={closeMobileMenu}>
                         <img 
-                            src="/resources/images/aces-animation-logo.png" 
-                            alt="ACES" 
+                            src="/resources/images/mashtake-logo.png" 
+                            alt="MASHTAKE" 
                             className="logo-image"
                         />
-                        <span className="logo-text">ACES</span>
+                        <span className="logo-text">MASHTAKE</span>
                     </Link>
 
                     {/* Navegación Desktop */}
@@ -63,13 +63,18 @@ const Header = () => {
                                 </Link>
                                 <ul className="dropdown-menu">
                                     <li>
-                                        <Link to="/services/dx-partner" onClick={closeMobileMenu}>
-                                            DXパートナーサービス
+                                        <Link to="/services#ai-services" onClick={closeMobileMenu}>
+                                            AI ソリューション
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/services/ai-software" onClick={closeMobileMenu}>
-                                            AIソフトウェアサービス
+                                        <Link to="/services#web-services" onClick={closeMobileMenu}>
+                                            デジタルマーケティング
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/services#other-services" onClick={closeMobileMenu}>
+                                            イノベーション事業
                                         </Link>
                                     </li>
                                 </ul>

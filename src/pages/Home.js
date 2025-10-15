@@ -37,10 +37,10 @@ const Home = () => {
         },
         {
             id: 'chathub',
-            title: 'ACES、ChatGPTをセキュアに利活用できる\n法人向けチャットボットAIプラットフォーム',
-            description: 'セキュリティとプライバシーを重視した\n企業向けChatGPTプラットフォーム\n「ACES ChatHub」の提供を開始',
+            title: 'MASHTAKE、ChatGPTをセキュアに利活用できる\n法人向けチャットボットAIプラットフォーム',
+            description: 'セキュリティとプライバシーを重視した\n企業向けChatGPTプラットフォーム\n「MASHTAKE ChatHub」の提供を開始',
             tag: '法人向けセキュアAIプラットフォーム',
-            image: '/resources/images/aces-animation-logo.png',
+            image: '/resources/images/mashtake-logo.png',
             link: '/projects/chat-hub'
         }
     ];
@@ -395,7 +395,7 @@ const Home = () => {
                                         </div>
                                     )}
                                     <div className="project-card-logos">
-                                        <img src="/resources/images/aces-animation-logo.png" alt="ACES" className="aces-logo" />
+                                        <img src="/resources/images/mashtake-logo.png" alt="MASHTAKE" className="mashtake-logo" />
                                         {project.id === 'namco' && (
                                             <img src="/resources/images/namco.png" alt="Bandai Namco Research" className="partner-logo" />
                                         )}

@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 const Contact = () => {
+  const heroRef = useRef(null);
+  const formRef = useRef(null);
+  const infoRef = useRef(null);
+  
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -10,6 +15,26 @@ const Contact = () => {
     message: '',
     inquiryType: 'general'
   });
+
+  useEffect(() => {
+    // Hero animation
+    gsap.fromTo(heroRef.current, 
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+    );
+
+    // Form animation
+    gsap.fromTo(formRef.current,
+      { opacity: 0, x: -30 },
+      { opacity: 1, x: 0, duration: 0.8, delay: 0.3, ease: "power2.out" }
+    );
+
+    // Info section animation
+    gsap.fromTo(infoRef.current,
+      { opacity: 0, x: 30 },
+      { opacity: 1, x: 0, duration: 0.8, delay: 0.5, ease: "power2.out" }
+    );
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,9 +53,17 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
-      <section className="page-hero">
-        <h1>お問い合わせ</h1>
-        <p>Contact Us</p>
+      <section className="contact-hero" ref={heroRef}>
+        <div className="container">
+          <div className="hero-content">
+            <h1 className="hero-title">お問い合わせ</h1>
+            <p className="hero-subtitle">Contact Us</p>
+            <div className="hero-description">
+              <p>AI・デジタル技術に関するご質問やご相談など、</p>
+              <p>お気軽にお問い合わせください。専門スタッフが丁寧に対応いたします。</p>
+            </div>
+          </div>
+        </div>
       </section>
       
       <section className="contact-content">
@@ -45,7 +78,7 @@ const Contact = () => {
           </div>
           
           <div className="contact-container">
-            <div className="contact-form-section">
+            <div className="contact-form-section" ref={formRef}>
               <h3>お問い合わせフォーム</h3>
               <form onSubmit={handleSubmit} className="contact-form">
                 <div className="form-group">
@@ -57,7 +90,9 @@ const Contact = () => {
                     required
                   >
                     <option value="general">一般的なお問い合わせ</option>
-                    <option value="service">サービスに関するお問い合わせ</option>
+                    <option value="ai-solution">AIソリューションについて</option>
+                    <option value="digital-marketing">デジタルマーケティングについて</option>
+                    <option value="innovation">イノベーション事業について</option>
                     <option value="support">サポートに関するお問い合わせ</option>
                     <option value="partnership">パートナーシップについて</option>
                     <option value="media">取材・メディア関連</option>
@@ -151,36 +186,31 @@ const Contact = () => {
               </form>
             </div>
             
-            <div className="contact-info-section">
+            <div className="contact-info-section" ref={infoRef}>
               <h3>会社情報</h3>
               <div className="contact-info">
                 <div className="info-item">
                   <div className="info-label">会社名</div>
-                  <div className="info-value">ACES株式会社</div>
+                  <div className="info-value">MASHTAKE株式会社</div>
                 </div>
                 
                 <div className="info-item">
                   <div className="info-label">所在地</div>
                   <div className="info-value">
-                    〒100-0001<br />
-                    東京都千代田区千代田1-1-1<br />
-                    ACESビル 10F
+                    〒542-0081<br />
+                    大阪府大阪市中央区南船場2丁目11-20<br />
+                    GATO三休橋ビル8階東
                   </div>
                 </div>
                 
                 <div className="info-item">
                   <div className="info-label">電話番号</div>
-                  <div className="info-value">03-1234-5678</div>
-                </div>
-                
-                <div className="info-item">
-                  <div className="info-label">FAX</div>
-                  <div className="info-value">03-1234-5679</div>
+                  <div className="info-value">06-4708-8655</div>
                 </div>
                 
                 <div className="info-item">
                   <div className="info-label">メール</div>
-                  <div className="info-value">info@aces.co.jp</div>
+                  <div className="info-value">info@mashtake.co.jp</div>
                 </div>
                 
                 <div className="info-item">
@@ -196,8 +226,8 @@ const Contact = () => {
                 <h4>アクセス</h4>
                 <div className="map-placeholder">
                   <p>🗺️ Google Maps</p>
-                  <p>東京駅から徒歩5分</p>
-                  <p>大手町駅から徒歩3分</p>
+                  <p>地下鉄御堂筋線「心斎橋駅」から徒歩5分</p>
+                  <p>地下鉄堺筋線「長堀橋駅」から徒歩3分</p>
                 </div>
               </div>
               

@@ -1,0 +1,47 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="#f0f5ff"/>
+  
+  <!-- Background pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <rect width="40" height="40" fill="none" stroke="#e0e8f0" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="600" fill="url(#grid)"/>
+  
+  <!-- AI Brain Icon -->
+  <g transform="translate(400, 250)">
+    <circle r="80" fill="url(#gradient)" opacity="0.1"/>
+    <circle r="60" fill="none" stroke="url(#gradient)" stroke-width="3"/>
+    
+    <!-- Neural connections -->
+    <circle cx="-30" cy="-30" r="8" fill="url(#gradient)"/>
+    <circle cx="30" cy="-30" r="8" fill="url(#gradient)"/>
+    <circle cx="-30" cy="30" r="8" fill="url(#gradient)"/>
+    <circle cx="30" cy="30" r="8" fill="url(#gradient)"/>
+    <circle cx="0" cy="0" r="10" fill="url(#gradient)"/>
+    
+    <line x1="0" y1="0" x2="-30" y2="-30" stroke="url(#gradient)" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="0" x2="30" y2="-30" stroke="url(#gradient)" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="0" x2="-30" y2="30" stroke="url(#gradient)" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="0" x2="30" y2="30" stroke="url(#gradient)" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="400" y="380" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#333">
+    MASHTAKE AI Academy
+  </text>
+  <text x="400" y="420" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#666">
+    AI研修プログラム
+  </text>
+  
+  <!-- Decorative elements -->
+  <rect x="100" y="480" width="100" height="4" fill="url(#gradient)" opacity="0.5"/>
+  <rect x="220" y="480" width="60" height="4" fill="url(#gradient)" opacity="0.5"/>
+  <rect x="520" y="480" width="60" height="4" fill="url(#gradient)" opacity="0.5"/>
+  <rect x="600" y="480" width="100" height="4" fill="url(#gradient)" opacity="0.5"/>
+</svg>

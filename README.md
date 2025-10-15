@@ -1,14 +1,14 @@
-# 🚀 ACES Site Clone
+# 🚀 MASHTAKE Site Clone
 
 ## 🇯🇵 日本語版 (Japanese Version)
 
-### ACESサイトクローン
+### MASHTAKEサイトクローン
 
-これは[ACES](https://acesinc.co.jp/)のウェブサイトの**完全なクローン**で、Reactを使用して作成され、元のサイトのデザイン、機能、コンテンツを忠実に再現しています。
+これは[MASHTAKE](https://mashtake.co.jp/)のウェブサイトの**完全なクローン**で、Reactを使用して作成され、元のサイトのデザイン、機能、コンテンツを忠実に再現しています。
 
 #### ✨ 特徴
 
-- **🎯 忠実なクローン**: ACESの元のデザインの正確な複製
+- **🎯 忠実なクローン**: MASHTAKEの元のデザインの正確な複製
 - **⚛️ React 18**: 最新バージョンのReactで構築
 - **🎨 レスポンシブデザイン**: すべてのデバイスに対応
 - **🚀 最適化されたパフォーマンス**: 高速で効率的な読み込み
@@ -20,7 +20,7 @@
 #### 🏗️ プロジェクト構造
 
 ```
-aces-clone/
+mashtake-clone/
 ├── public/
 │   ├── resources/          # 元のサイトから抽出されたリソース
 │   │   ├── images/        # 49枚のダウンロードされた画像
@@ -86,7 +86,7 @@ aces-clone/
 #### 🌐 利用可能なページ
 
 - **🏠 ホーム** (`/`) - ヒーロー、サービス、プロジェクトを含むメインページ
-- **👥 会社概要** (`/about`) - ACESについての情報
+- **👥 会社概要** (`/about`) - MASHTAKEについての情報
 - **🛠️ サービス** (`/services`) - 提供されるサービス
 - **📊 プロジェクト** (`/projects`) - 成功事例とプロジェクト
 - **🔬 技術** (`/technologies`) - 使用される技術
@@ -129,7 +129,7 @@ aces-clone/
 #### 📁 抽出されたリソース
 
 ##### 画像（49ファイル）
-- ACESのメインロゴ
+- MASHTAKEのメインロゴ
 - プロジェクト画像
 - クライアントロゴ
 - 背景画像
@@ -212,7 +212,7 @@ aces-clone/
 #### 📝 重要な注意事項
 
 - このプロジェクトは**教育と開発目的のみ**です
-- すべてのリソースはACESの元のサイトから抽出されています
+- すべてのリソースはMASHTAKEの元のサイトから抽出されています
 - コンテンツは元のサイトと同様に**日本語**です
 - **視覚的な忠実性**を最大限に維持しています
 
@@ -232,23 +232,23 @@ aces-clone/
 
 #### 📞 連絡先
 
-- **プロジェクト**: ACESサイトクローン
-- **元のサイト**: [https://acesinc.co.jp/](https://acesinc.co.jp/)
+- **プロジェクト**: MASHTAKEサイトクローン
+- **元のサイト**: [https://mashtake.co.jp/](https://mashtake.co.jp/)
 - **開発者**: Reactでクローン
 
 ---
 
-**🎉 ACESウェブサイトのこの忠実なクローンをお楽しみください！**
+**🎉 MASHTAKEウェブサイトのこの忠実なクローンをお楽しみください！**
 
 ---
 
 ## 🇪🇸 Versión en Español (Spanish Version)
 
-Este es un **clon exacto** del sitio web de [ACES](https://acesinc.co.jp/) creado con React, que replica fielmente el diseño, funcionalidad y contenido del sitio original.
+Este es un **clon exacto** del sitio web de [MASHTAKE](https://mashtake.co.jp/) creado con React, que replica fielmente el diseño, funcionalidad y contenido del sitio original.
 
 ## ✨ Características
 
-- **🎯 Clon Fiel**: Replica exacta del diseño original de ACES
+- **🎯 Clon Fiel**: Replica exacta del diseño original de MASHTAKE
 - **⚛️ React 18**: Construido con la última versión de React
 - **🎨 Diseño Responsive**: Adaptable a todos los dispositivos
 - **🚀 Performance Optimizada**: Carga rápida y eficiente
@@ -260,7 +260,7 @@ Este es un **clon exacto** del sitio web de [ACES](https://acesinc.co.jp/) cread
 ## 🏗️ Estructura del Proyecto
 
 ```
-aces-clone/
+mashtake-clone/
 ├── public/
 │   ├── resources/          # Recursos extraídos del sitio original
 │   │   ├── images/        # 49 imágenes descargadas
@@ -326,7 +326,7 @@ aces-clone/
 ## 🌐 Páginas Disponibles
 
 - **🏠 Home** (`/`) - Página principal con hero, servicios y proyectos
-- **👥 About** (`/about`) - Información sobre ACES
+- **👥 About** (`/about`) - Información sobre MASHTAKE
 - **🛠️ Services** (`/services`) - Servicios ofrecidos
 - **📊 Projects** (`/projects`) - Casos de éxito y proyectos
 - **🔬 Technologies** (`/technologies`) - Tecnologías utilizadas
@@ -369,7 +369,7 @@ El sitio está optimizado para:
 ## 📁 Recursos Extraídos
 
 ### Imágenes (49 archivos)
-- Logo principal de ACES
+- Logo principal de MASHTAKE
 - Imágenes de proyectos
 - Logos de clientes
 - Imágenes de fondo
@@ -452,7 +452,7 @@ El sitio está optimizado para:
 ## 📝 Notas Importantes
 
 - Este proyecto es **solo para fines educativos y de desarrollo**
-- Todos los recursos han sido extraídos del sitio original de ACES
+- Todos los recursos han sido extraídos del sitio original de MASHTAKE
 - El contenido está en **japonés** como en el sitio original
 - Se mantiene la **fidelidad visual** al máximo posible
 
@@ -472,11 +472,11 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 📞 Contacto
 
-- **Proyecto**: ACES Site Clone
-- **Sitio Original**: [https://acesinc.co.jp/](https://acesinc.co.jp/)
+- **Proyecto**: MASHTAKE Site Clone
+- **Sitio Original**: [https://mashtake.co.jp/](https://mashtake.co.jp/)
 - **Desarrollador**: Clonado con React
 
 ---
 
-**🎉 ¡Disfruta explorando este clon fiel del sitio web de ACES!**
+**🎉 ¡Disfruta explorando este clon fiel del sitio web de MASHTAKE!**
 
