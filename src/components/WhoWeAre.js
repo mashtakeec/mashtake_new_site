@@ -14,14 +14,18 @@ const WhoWeAre = () => {
                         
                         <div className="who-we-are-main-text">
                             <p className="main-statement">
-                                <span className="highlight-text">ACESは、アルゴリズムを用いて</span><br />
-                                <span className="highlight-text">事業開発を行うAI事業会社です。</span>
+                                <span className="highlight-text">MASHTAKEは、</span><br />
+                                <span className="highlight-text">AIネイティブな未来を創る会社です</span>
                             </p>
                         </div>
                         
                         <div className="who-we-are-description">
                             <p>
-                                AIアルゴリズムを用いて属人化しているヒトの知見や業務をデジタル化する「AIトランスフォーメーション事業」を通して、「シンプルな社会」の実現を目指しています。
+                                その未来では、AIは特別なものではなく、<br />
+                                誰もが当たり前に使いこなすパートナー。
+                            </p>
+                            <p>
+                                私たちは、その未来を今、ここから始めています。
                             </p>
                         </div>
                         

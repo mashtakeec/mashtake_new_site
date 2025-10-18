@@ -102,10 +102,10 @@ const Home = () => {
 
         // Scramble animation removed - using static text instead
 
-        // Lottie背景アニメーション（SVGデータを模擬）
+        // 背景アニメーション - 円と円弧
         const createBackgroundAnimation = () => {
             if (motionBgRef.current) {
-                // 幾何学的な背景を作成
+                // SVG要素を作成
                 const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
                 svg.setAttribute('viewBox', '0 0 1920 1080');
                 svg.setAttribute('width', '100%');
@@ -115,37 +115,130 @@ const Home = () => {
                 svg.style.left = '0';
                 svg.style.zIndex = '1';
 
-                // 背景パス1
-                const path1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                path1.setAttribute('d', 'M619.40771484375,-544 C619.40771484375,-544 -962,-544 -962,-544 C-962,-544 -963,544 -963,544 C-963,544 -3.3308920860290527,542.1386108398438 -3.3308920860290527,542.1386108398438 C-3.3308920860290527,542.1386108398438 619.40771484375,-544 619.40771484375,-544z');
-                path1.setAttribute('fill', '#fcfcfc');
-                path1.setAttribute('transform', 'translate(960, 540)');
+                // 最奥の円（一番大きい）
+                const bgCircle0 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                bgCircle0.setAttribute('id', 'bg-circle-0');
+                bgCircle0.setAttribute('cx', '960');
+                bgCircle0.setAttribute('cy', '540');
+                bgCircle0.setAttribute('r', '900');
+                bgCircle0.setAttribute('fill', '#fcfcfc');
+                bgCircle0.setAttribute('fill-opacity', '0.6');
 
-                // 背景パス2
-                const path2 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                path2.setAttribute('d', 'M961.25,-324.3614501953125 C961.25,-324.3614501953125 465.0522155761719,542.43115234375 465.0522155761719,542.43115234375 C465.0522155761719,542.43115234375 963,543.5 963,543.5 C963,543.5 961.25,-324.3614501953125 961.25,-324.3614501953125z');
-                path2.setAttribute('fill', '#fcfcfc');
-                path2.setAttribute('transform', 'translate(960, 540)');
+                // 背景円1（呼吸アニメーション）
+                const bgCircle1 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                bgCircle1.setAttribute('id', 'bg-circle-1');
+                bgCircle1.setAttribute('cx', '960');
+                bgCircle1.setAttribute('cy', '540');
+                bgCircle1.setAttribute('r', '800');
+                bgCircle1.setAttribute('fill', '#fcfcfc');
+                bgCircle1.setAttribute('fill-opacity', '0.7');
 
-                svg.appendChild(path1);
-                svg.appendChild(path2);
+                // 背景円2（呼吸アニメーション）
+                const bgCircle2 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                bgCircle2.setAttribute('id', 'bg-circle-2');
+                bgCircle2.setAttribute('cx', '960');
+                bgCircle2.setAttribute('cy', '540');
+                bgCircle2.setAttribute('r', '650');
+                bgCircle2.setAttribute('fill', '#fcfcfc');
+                bgCircle2.setAttribute('fill-opacity', '0.8');
+
+                // 回転する円弧1（ブルー、1/3が欠けた円）
+                const rotatingArc1 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                rotatingArc1.setAttribute('id', 'rotating-arc-1');
+                rotatingArc1.setAttribute('cx', '960');
+                rotatingArc1.setAttribute('cy', '540');
+                rotatingArc1.setAttribute('r', '850');
+                rotatingArc1.setAttribute('fill', 'none');
+                rotatingArc1.setAttribute('stroke', '#4a90e2');
+                rotatingArc1.setAttribute('stroke-width', '4');
+                rotatingArc1.setAttribute('stroke-dasharray', '3560 1780'); // 2/3が線、1/3が空白
+
+                // 回転する円弧2（パープル、1/4が欠けた円）
+                const rotatingArc2 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                rotatingArc2.setAttribute('id', 'rotating-arc-2');
+                rotatingArc2.setAttribute('cx', '960');
+                rotatingArc2.setAttribute('cy', '540');
+                rotatingArc2.setAttribute('r', '725');
+                rotatingArc2.setAttribute('fill', 'none');
+                rotatingArc2.setAttribute('stroke', '#9b59b6');
+                rotatingArc2.setAttribute('stroke-width', '5');
+                rotatingArc2.setAttribute('stroke-dasharray', '3420 1140'); // 3/4が線、1/4が空白
+
+                // 回転する円弧3（ティール、1/2が欠けた円）
+                const rotatingArc3 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                rotatingArc3.setAttribute('id', 'rotating-arc-3');
+                rotatingArc3.setAttribute('cx', '960');
+                rotatingArc3.setAttribute('cy', '540');
+                rotatingArc3.setAttribute('r', '600');
+                rotatingArc3.setAttribute('fill', 'none');
+                rotatingArc3.setAttribute('stroke', '#1abc9c');
+                rotatingArc3.setAttribute('stroke-width', '3');
+                rotatingArc3.setAttribute('stroke-dasharray', '1885 1885'); // 1/2が線、1/2が空白
+
+                svg.appendChild(bgCircle0);
+                svg.appendChild(bgCircle1);
+                svg.appendChild(bgCircle2);
+                svg.appendChild(rotatingArc1);
+                svg.appendChild(rotatingArc2);
+                svg.appendChild(rotatingArc3);
                 motionBgRef.current.appendChild(svg);
 
                 // GSAPアニメーション
-                gsap.to(path1, {
-                    rotation: 360,
-                    duration: 20,
+                // 最奥の円のゆっくりした呼吸
+                gsap.to(bgCircle0, {
+                    scale: 1.1,
+                    duration: 12,
                     repeat: -1,
-                    ease: "none",
-                    transformOrigin: "center"
+                    yoyo: true,
+                    ease: "power1.inOut",
+                    transformOrigin: "50% 50%"
                 });
 
-                gsap.to(path2, {
+                // 背景円1の呼吸アニメーション
+                gsap.to(bgCircle1, {
+                    scale: 1.2,
+                    duration: 8,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "power1.inOut",
+                    transformOrigin: "50% 50%"
+                });
+
+                // 背景円2の呼吸アニメーション
+                gsap.to(bgCircle2, {
+                    scale: 1.15,
+                    duration: 10,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "power1.inOut",
+                    transformOrigin: "50% 50%"
+                });
+
+                // 円弧1の回転アニメーション（時計回り、ゆっくり）
+                gsap.to(rotatingArc1, {
+                    rotation: 360,
+                    duration: 50,
+                    repeat: -1,
+                    ease: "none",
+                    transformOrigin: "50% 50%"
+                });
+
+                // 円弧2の回転アニメーション（反時計回り、中速）
+                gsap.to(rotatingArc2, {
                     rotation: -360,
+                    duration: 35,
+                    repeat: -1,
+                    ease: "none",
+                    transformOrigin: "50% 50%"
+                });
+
+                // 円弧3の回転アニメーション（時計回り、速い）
+                gsap.to(rotatingArc3, {
+                    rotation: 360,
                     duration: 25,
                     repeat: -1,
                     ease: "none",
-                    transformOrigin: "center"
+                    transformOrigin: "50% 50%"
                 });
             }
         };
@@ -200,24 +293,25 @@ const Home = () => {
                         <h2 className="section-title-en">Services</h2>
                         <span className="section-title-jp">事業紹介</span>
                         <h4 className="section-subtitle">
-                            ヒトの知見と業務をDeep Learningを用いてAI化し、デジタルでの事業開発を推進しています。
+                            5年後の当たり前を、今から始める。<br />
+                            AIネイティブな組織と人材を育てます。
                         </h4>
                     </div>
                     <div className="services-grid">
-                        <div className="service-card dx-partner-card">
-                            <h3>DX Partner Service</h3>
-                            <h4>DXパートナーサービス</h4>
+                        <div className="service-card ai-education-card">
+                            <h3>AI Education & Training</h3>
+                            <h4>AI教育・研修サービス</h4>
                             <p>
-                                事業・業界を変えたいと立ち上がった人とともに、AI専門家集団がプロジェクトを通じて、
-                                さまざまな業界のDX推進をお手伝いします。
+                                企業向けAI研修とAi-BOWコミュニティ運営。<br />
+                                実践的なカリキュラムで、AI人材を育成し、組織と個人の成長を支援します。
                             </p>
                         </div>
-                        <div className="service-card ai-software-card">
-                            <h3>AI Software Service</h3>
-                            <h4>AIソフトウェアサービス</h4>
+                        <div className="service-card development-card">
+                            <h3>Development & Implementation</h3>
+                            <h4>開発・実装サービス</h4>
                             <p>
-                                さまざまな業種のパートナーとDX推進を行う中で得た知見とAIアルゴリズムを利用した
-                                ソフトウェアを開発し、提供しています。
+                                AIシステム開発、WEBシステム構築、ブロックチェーン実装まで。<br />
+                                最新技術を活用し、ビジネス課題を解決するシステムを提供します。
                             </p>
                         </div>
                     </div>
@@ -232,12 +326,24 @@ const Home = () => {
                     </div>
                     <div className="vision-mission-content">
                         <div className="vision-card">
-                            <h3>Vision</h3>
-                            <p>アルゴリズムで、シンプルな社会を</p>
+                            <h3>VISION</h3>
+                            <h4 className="vision-title">AIと共に、人がもっと人らしくなれる世界へ</h4>
+                            <div className="vision-description">
+                                <p>効率化できることは、AIに任せる。</p>
+                                <p>人は、人にしかできないことに集中する。</p>
+                                <p>温かさ、創造性、つながり。</p>
+                                <p>そんな本質的な価値が中心の社会へ。</p>
+                            </div>
                         </div>
                         <div className="mission-card">
-                            <h3>Mission</h3>
-                            <p>ヒトの知見と業務をDeep Learningを用いてAI化し、デジタルでの事業開発を推進しています。</p>
+                            <h3>MISSION</h3>
+                            <h4 className="mission-title">AI時代の人間力を、共に創る。</h4>
+                            <div className="mission-description">
+                                <p>教育で恐れを自信に変え、</p>
+                                <p>開発で作業を創造に変え、</p>
+                                <p>コミュニティで個人を仲間につなげる。</p>
+                                <p className="mission-conclusion">AIとの共存で生まれる新しい時間を、<br />人間らしさの追求に使える社会を実現します。</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -254,11 +360,13 @@ const Home = () => {
                         </div>
                         <div className="projects-header-right">
                             <h4 className="section-subtitle">
-                                AIアルゴリズムを軸にDXを推進、支援してきたパートナーとの実績を紹介します。
+                                100を超えるWEB制作・デジタルマーケティングの実績。<br />
+                                そこで培った知見を、AI時代に活かす。
                             </h4>
                             <p className="section-description">
-                                保険、金融、小売、介護、人材、建設、スポーツなど、事業・業界を変えたいと立ち上がった
-                                パートナーのみなさまと併走して、数多くのDXプロジェクトを推進しています。
+                                WEB広告、サイト制作、システム開発で多くの企業を支援。<br />
+                                今、その経験にAI技術を掛け合わせ、<br />
+                                新しい価値を生み出しています。
                             </p>
                         </div>
                     </div>

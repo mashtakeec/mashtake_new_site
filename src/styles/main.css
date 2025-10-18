@@ -963,6 +963,21 @@ a:hover {
     background: white;
 }
 
+.services-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.services-section .section-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #2c3e50;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 20px auto 0;
+    text-align: center;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -973,38 +988,42 @@ a:hover {
 
 /* Service Cards Base */
 .service-card {
-    padding: 0;
+    padding: 2.5rem;
     text-align: left;
-    -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
-    transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
-    -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-       -moz-box-orient: vertical;
-       -moz-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     overflow: hidden;
     border-radius: 20px;
     background: white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid #f0f0f0;
-    -webkit-box-pack: end;
-       -moz-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    min-height: 450px;
-    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            aspect-ratio: 1 / 1;
+    justify-content: flex-start;
+    min-height: 350px;
+    position: relative;
+}
 
-            
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* AI Education Card */
+.ai-education-card {
+    border-left: 5px solid #4a90e2;
+}
+
+.ai-education-card:hover {
+    border-left-color: #357abd;
+}
+
+/* Development Card */
+.development-card {
+    border-left: 5px solid #9b59b6;
+}
+
+.development-card:hover {
+    border-left-color: #7d3c98;
 }
 
 /* Service Image */
@@ -2765,13 +2784,13 @@ a:hover {
 }
 
 .section-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 400;
-    color: #666;
-    line-height: 1.6;
+    color: #5a6c7d;
+    line-height: 1.8;
     max-width: 800px;
-    margin: 15px 0 0;
-    text-align: left;
+    margin: 20px auto 0;
+    text-align: center;
 }
 
 .section-title p {
@@ -3736,8 +3755,8 @@ a:hover {
         padding: 2rem;
     }
 
-    .dx-partner-card h4,
-    .ai-software-card h4 {
+    .ai-education-card h4,
+    .development-card h4 {
         font-size: 36px;
     }
 
@@ -3920,8 +3939,8 @@ a:hover {
         padding: 1.5rem;
     }
 
-    .dx-partner-card h4,
-    .ai-software-card h4 {
+    .ai-education-card h4,
+    .development-card h4 {
         font-size: 28px;
     }
 
@@ -4053,7 +4072,7 @@ a:hover {
     padding: 3rem;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    text-align: center;
+    text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -4070,10 +4089,41 @@ a:hover {
 
 .vision-card h3,
 .mission-card h3 {
-    font-size: 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #7f8c8d;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.vision-title,
+.mission-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2c3e50;
+    line-height: 1.4;
     margin-bottom: 1.5rem;
-    color: var(--primary-color);
-    font-weight: 300;
+}
+
+.vision-description,
+.mission-description {
+    color: #5a6c7d;
+}
+
+.vision-description p,
+.mission-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+}
+
+.mission-conclusion {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e9ecef;
+    font-weight: 500;
+    color: #2c3e50 !important;
 }
 
 .vision-card p,
