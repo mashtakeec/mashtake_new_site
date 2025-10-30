@@ -456,7 +456,7 @@ const Home = () => {
                         <h2 className="section-title-en">Our Clients</h2>
                         <span className="section-title-jp">クライアント企業</span>
                         <p className="section-subtitle">
-                            ACESと共に歩んできた企業を紹介します。
+                            MASHと共に歩んできた企業を紹介します。
                         </p>
                         <p className="section-description">
                             私たちは各業界をリードする企業のDXプロジェクトにAIパートナーとして伴走することで、
