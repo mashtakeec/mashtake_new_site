@@ -453,7 +453,7 @@ const Home = () => {
             <section className="clients-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2 className="section-title-en">Our Clients — MASH Test</h2>
+                        <h2 className="section-title-en">Our Clients</h2>
                         <span className="section-title-jp">クライアント企業</span>
                         <p className="section-subtitle">
                             MASHと共に歩んできた企業を紹介します。
